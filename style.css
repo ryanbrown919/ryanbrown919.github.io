@@ -13,15 +13,14 @@ h5 {
     padding-right: 5%;
 }
 #headerLogo {
-    background-color: green;
     content-align: left;
     padding: 10px
     display: flex;
     
 }
 #logo img{
-    max-width: 100px;
-    max-height: 100px;
+    width: 100px;
+    height: 100px;
 
 }
 #headerTitle {
