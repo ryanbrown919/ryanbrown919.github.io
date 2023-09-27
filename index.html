@@ -14,30 +14,50 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#workExperience">Work Experience</a></li>
                 <li><a href="#Photos">Photos</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="games.html">Games</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="about">
-        <!-- About Me section -->
-        <p>This website is a personal project to better share some of my past professional experience, group projects and personal projects. Learning HTML, CSS and Javascript are new endeavors for me, so the site is still under contruction. Please come back soon!</p>
+
+        <h2>About Me</h2>
+        <p>Hi! My name is Ryan brown and I am a 4th year Integrated Engineering student at the University of British Columbia. You may be wondering, what is Integrated Engineering? It is a multidisciplinary option at UBC that allows me to select my "Major" and "Minor" out of any of the core engineering disciplines. I am currently planning on specializing in Electrical Engineering and Mechanical Enginnering.</p>
+        <p>I chose Integrated Engineering becuase I have always had a strong desire to know how to do a little bit of  everything, a jack of all trades type. Integrated engineering has allowed me to explore many different areas, so I can find what excites me most and approach problems with a very broad perspective.</p>
+        <p> Another benefit is that we complete term-long group projects in our 3rd and 4th year, so we essentially have a Capstone project every year instead of only in our final year. To date, I have made a volleyball setting machine and a kit to convert blinds automatic</p>
+    
     </section>
 
     <section id="projects">
-        <!-- Projects section -->
-        <h2>Prospike VOlleyball Machine</h2>
-        <p>Volleyball stuff here</p>
-        <h2>Strain Gauge</h2>
-        <p>Strain gauge stuff here</p>
-        <h2>Automatic Blinds</h2>
-        <p>Automatic blinds stuff here</p>
-    </section>
+        <h2>Projects</h2>
+        <p>Here are some projects I have worked on throughout my time at UBC</p>
 
+
+        <h3>Volleyball Setting Machine (Sept 2022 - Apr 2023)</h3>
+        <h6>C#, XAML, Ardunio, Mechatronics, UI/UX</h5>
+        <h5>Project Background and Successes</h5>
+        <p>The reason we decided to build this machine is that volleyball is inherently a team sport, and it is almost impossibel to practice offensive drills without a willing setter to assist you. We wanted to solve this problem by createing a device that could act as a setter for offensive drills. We presented this device at Design and Innovation Day 2023 with over 50 launches, oll of whoich landed in our laie dout 2 x 3 foot target area</p>
+        <h5>Project Description</h5>
+        <p>The design we settled on used two motor-driven wheels to launch the volleyball. Out device sits on the court in the position typically occupied by the setter, and is powered via an extension cord to a wall outlet.</p>
+        <p> A servo allows the balls to feed in from a sloped storage area, where it lands on a central ring. The ring is driven upwards by a water-jet cut rack and spur gear, where at the top the ball is placed between two 3D printed wheels, after which the ball is launched upwards at a significant velocity.</p>
+        <p>For aiming, the rack and gear, central ring and launch wheels are all mounted on an aluminum extrusion frame. A linear actuator attached to one some of the frame allows it to rotate around a central axis, allowing the device to aim along one axis, so the ball can reach anywhere along a volleyball net.</p>
+        <p>In terms of hour the user interacts with the machines, a user interface was created on a touchscreen laptop attached to the machine with a live preview of the ball's estimated trajectory, as well as preset options for some of the most common sets. Three customs optiosn were avalible, where the user could customized the apec height and landing location of the ball using on screen sliders, and save these custom settings to the availibly presets</p>
+        <h5>Personal Contributions</h5>
+        <p>My primary contribution to hr project was the user interface software and the microcontroller firmware. In terms of user interface, I utilized C# and XAML to create a windows WPF application. I created custom elements for a more aesthetic display and progrmamed animations to display the live estimated trajectory of the ball, even when it was a custom set created by the user. I used C# becuase it is very straightforward to use it to communicate serially, so once the user was satisfied with their sequence of sets the program sent a custom string to a serially connected Ardiuino uno that could decode the desired linear actuator extension (aiming), motor speed and time the servo and stepper laucnch sequence, as well as some debugging modes built in.</p>
+        <p>Once the Arduino received the information from the progrma on the computer, it communitcated via I2C with another Arduino controlling the linear actuator and a ultrasonic sensor measuring its extension using P-control to maintain that angle until otherwise instructed. The forst arduino also used I2C to communicate with a digital potentiometer we spliced onto a PWM motor controller that controlled the launch motors. This controller came with a mechanical knob potentiometer, but by using the digital potentiometer we were able to contorl the output automatically using code.</p>
+        <h5>Challenges and Solutions</h5>
+        <p>One of the biggest challenges is that we were wrokign with a budget of $400 CAD. This meant that we had to compromise on a lot of things we would have prefered to upgrade. Our main frame was contructed out of wood we found in our clubroom, and our electrical componets were either scavanged or had very long lead times once ordered. These factors slowed down our productivity and meant most of our work was completed later in the term. Out electronics did not have proper connectors and fasteners and often caused issues from disconnecting due to moving the device around. Our solution was to solder as much as possible and keep every system colour-coded we we could wuickly debug our circuitry and figure out where a disconnection might be.</p>
+        <p>Another challenge was dealing with vibrations. When we originally assembled it for the first time, it shook terribly and was extremely loud. We identofied that the shafts the launch wheels were on were off axis, so we reworded them and added spare gasgets at some key joints, which almost completely took away any vibrational issues.</p>
+        <h5>Media</h5>
+        
+    </section>
+    <section id="workExperience">
+        <h2>Work Experience</h2>
+    </section>
     <section id="contact">
-        <!-- Contact section -->
+        <h2>Contact</h2>
     </section>
 
     <footer>
