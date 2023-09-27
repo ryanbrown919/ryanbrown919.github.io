@@ -26,6 +26,7 @@ h5 {
 }
 #headerSocials {
     display: flex;
+    align-items: center;
 }
 /* Style header and navigation */
 header {
