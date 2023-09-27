@@ -21,6 +21,9 @@ h5 {
     float: left;
     
 }
+#headerTitle {
+    float: left;
+}
 #headerSocials {
     float: right;
 }
