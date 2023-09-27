@@ -8,6 +8,10 @@ h5 {
     color: #051e78;
     font-size: 16;
 }
+#mainbody {
+    padding-left: 100px;
+    padding-right: 100px;
+}
 /* Style header and navigation */
 header {
     background-color: #051e78;
