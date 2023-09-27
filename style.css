@@ -2,11 +2,12 @@
 body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
+    font-family: Arial;
 }
 
 /* Style header and navigation */
 header {
-    background-color: #333;
+    background-color: #051e78;
     color: white;
     padding: 20px;
     text-align: center;
@@ -27,3 +28,11 @@ nav a {
 }
 
 /* Add more CSS styles to customize your website */
+
+#right-content{
+    padding: 20px;
+}
+
+#left-content{
+    padding: 20px;
+}
