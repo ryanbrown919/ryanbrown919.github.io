@@ -18,17 +18,20 @@ h5 {
     max-height: 75px;
     content-align: left;
     padding: 10px
-    float: left;
+    display: flex;
     
 }
 #headerTitle {
     
 }
 #headerSocials {
-    float: right;
+    display: flex;
 }
 /* Style header and navigation */
 header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
     background-color: #051e78;
     color: white;
     padding: 20px;
