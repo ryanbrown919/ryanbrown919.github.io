@@ -27,6 +27,7 @@ h5 {
 #headerSocials {
     display: flex;
     align-items: center;
+    list-style-type: none;
 }
 /* Style header and navigation */
 header {
