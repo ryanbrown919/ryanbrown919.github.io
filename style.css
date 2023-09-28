@@ -5,7 +5,6 @@ body, h1, h2, h3, p {
     font-family: Arial;
     color: white;
     background-color: black;
-    text-align: justify;
 }
 p {
 
@@ -41,7 +40,7 @@ h5 {
     
 }
 span {
-    width: 50%;
+    width: 45%;
     padding: 5%;
     margin-right: 10%;
     color: white;
