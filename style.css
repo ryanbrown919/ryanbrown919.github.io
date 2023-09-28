@@ -1,4 +1,8 @@
 /* Reset some default styles */
+* {
+    box-sizing: border-box;
+  }
+
 body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
@@ -24,6 +28,11 @@ h5 {
 
     
 }
+@media screen and (max-width:600px) {
+    .column {
+      width: 100%;
+    }
+  }
 .row::after {
     content: "";
     display: table;
@@ -76,7 +85,7 @@ nav ul li {
 }
 nav ul li:hover{
     text-decoration:underline;
-    
+
 }
 
 nav a {
