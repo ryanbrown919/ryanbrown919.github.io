@@ -74,6 +74,10 @@ nav ul li {
     display: inline;
     margin-right: 20px;
 }
+nav ul li:hover{
+    text-decoration:underline;
+    
+}
 
 nav a {
     text-decoration: none;
