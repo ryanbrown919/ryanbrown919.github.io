@@ -29,7 +29,9 @@ h5 {
 
 }
 #image {
-    width: 50%;
+    width: 35%;
+    padding: 5%;
+    max-height: 200px;
 }
 span {
     width: 50%;
