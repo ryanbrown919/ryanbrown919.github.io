@@ -35,6 +35,7 @@ h5 {
 }
 span {
     width: 50%;
+    padding: 5%;
 }
 .section-container {
     display: flex;
