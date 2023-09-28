@@ -13,6 +13,7 @@ body, h1, h2, h3, p {
 p {
 
     color: white;
+    text-align:justify;
 }
 h5 {
     color: #051e78;
