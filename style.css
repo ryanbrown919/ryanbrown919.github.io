@@ -28,9 +28,12 @@ h5 {
     height: 100px;
 
 }
+#image {
+    display: inline-block;
+    max-width: 40%
+}
 span {
     max-width: 40%;
-    display: inline-block;
     
     
 }
