@@ -62,8 +62,7 @@ header {
     display: flex;
     justify-content: space-between;
     /*background-color: #051e78; */
-    border-bottom: 5px;
-    border-bottom-color: white;
+    border-bottom: 5px, solid, white;
     color: white;
     padding: 20px;
     text-align: center;
