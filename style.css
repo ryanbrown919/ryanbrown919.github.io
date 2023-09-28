@@ -7,6 +7,10 @@ body, h1, h2, h3, p {
     background-color: black;
     text-align: justify;
 }
+p {
+
+    color: white;
+}
 h5 {
     color: #051e78;
     font-size: 16;
