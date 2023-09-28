@@ -16,10 +16,14 @@ h5 {
     align-items: left;
     padding: 5%;
     display: inline;
-    max-width: 75px;
-    max-height: 75px;
+
     
 }
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 #logo {
     width: 100px;
     height: 100px;
