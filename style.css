@@ -16,6 +16,8 @@ h5 {
     content-align: left;
     padding: 10px
     display: flex;
+    max-width: 75px;
+    max-height: 75px;
     
 }
 #logo {
