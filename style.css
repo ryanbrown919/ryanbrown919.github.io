@@ -28,7 +28,8 @@ h5 {
     height: 100px;
 
 }
-#headerTitle {
+span {
+    max-width: 40%;
     
 }
 #headerSocials {
