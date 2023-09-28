@@ -29,13 +29,15 @@ h5 {
 
 }
 #image {
-    display: inline-block;
-    max-width: 40%
+    width: 50%;
 }
 span {
-    max-width: 40%;
-    display: inline-block;
-    
+    width: 50%;
+}
+.section-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 #headerSocials {
     display: flex;
