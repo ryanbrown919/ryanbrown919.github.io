@@ -44,7 +44,7 @@ span {
     flex-wrap: wrap;
 }
 #headerSocials {
-    display: flex;
+    display: inline;
     align-items: right;
     list-style-type: none;
 }
