@@ -51,10 +51,9 @@ h5 {
 
 
 .column {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width:50%
+    float: left;
+    width: 50%;
+    padding: 15px;
 }
 #headerSocials {
     display: inline;
