@@ -33,7 +33,7 @@ h5 {
 }
 #headerSocials {
     display: flex;
-    float: right;
+    right: 0px;
     list-style-type: none;
 }
 /* Style header and navigation */
