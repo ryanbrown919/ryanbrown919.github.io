@@ -56,6 +56,8 @@ h5 {
     width: 50%;
     padding: 15px;
     max-width: 50%;
+     justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
 }
 .column img{
     width: 100%;
