@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Brown - Portfolio</title>
+    <link rel="icon" href="/images/rbLogo2.png" type="image/x-icon">
+    <style>
+        html {
+            background-color: lightgray;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+
+        }
+        .container {
+            background-color: whitesmoke;
+        }
+        .header {
+            text-align: left;
+            background-color: whitesmoke;
+            color: rgb(1, 1, 62);
+            padding: 20px;
+            padding-bottom: 0px;
+            margin-bottom:0px;
+            
+        
+        }
+        hr {
+            height: 2px;
+            background-color:darkgray;
+            border: radius 1px;
+            margin-top: 5px;
+
+        }
+        h1 {
+            padding-top:5px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-weight: bold;
+        }
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .skills-column {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .section-title :hover {
+            background-color: rgb(232, 232, 232);
+            border-radius: 10px;
+            transition-duration: 0.5s;
+        }
+        #headerSocials {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color:rgb(1, 1, 62);
+            border-radius:5px;
+        }
+        h2 {
+            color:rgb(1, 1, 62);
+            margin-bottom: 2px;
+
+        }
+        .large-text {
+            font-size: 40px;
+            color:rgb(1, 1, 62);
+        }
+
+        .small-text {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <div id=headerSocials>
+            
+        
+        <a href="https://www.linkedin.com/in/ryanmacbrown/"><img src="/images/linkedinLogo.png" width=50px height=50px></a>
+        <a href="https://github.com/ryanbrown919"><img src="/images/githubLogo.png" width=50px height=50px ></a>
+    
+    </div>
+    <div class="container">
+        <div class="section">
+            <div class="header">
+                <h1><span class="large-text">Ryan Brown</span><span class="small-text"> Integrated Engineering Student at UBC</span></h1>
+                <p>Vancouver BC      |       ryanmacbrown@gmail.com </p>
+                <hr>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <hr>
+            <div class="skills">
+                <div class="skills-column">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C#, C</li>
+                        <li>HTML, CSS, Javascript</li>
+                        <li>SolidWorks</li>
+                        <li>Microsoft 365, VBA</li>
+                    </ul>
+                </div>
+                <div class="skills-column">
+                    <h3>Practical</h3>
+                    <ul>
+                        <li>Arduino | ESP32</li>
+                        <li>Soldering, Circuit Debugging</li>
+                        <li>Structural Analysis</li>
+                        <li>Field Surveying</li>
+                        <li>Project Management</li>
+                    </ul>
+                </div>
+                <div class="skills-column">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li>Standard First Aid & CPR-C</li>
+                        <li>BC Class 5 Driver's License</li>
+                        <li>Bronze Star, Medallion & Cross</li>
+                        <li>NLS Lifeguard Trained</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+                  
+            <h2 class="section-title">Education</h2>
+            <hr>
+            
+            <p><strong> University of British Columbia | Expected Graduation: May 2025</strong></p>
+            <p><i>Bachlor of Applied Science - Integrated Engineering</i></p>
+            <ul>
+                <li><i>Entering Year 4 Sept 2024 - Cumulite Average 86.5%</i></li>
+            </ul>
+            
+        </div>
+        <div class="section">
+            <h2 class="section-title">Work Experience</h2>
+            <hr>
+            <p><strong>Ledcor Technical Solutions - Vancouver, BC      |              May 2023 - Dec 2023</strong></p>
+            <p><em>Pole Line Design Engineering Co-op</em></p>
+            <ul>
+                <li>Performed Structural Analysis on telecom aerial for FTTH Telus implementation</li>
+                <li>Surveyed hydro and telecom poles throughout lower mainland</li>
+                <li>Created an Excel VBA userform interface to accelerate survey data verification by 30%</li>
+                <li>Utilized Python and SQL to build automation script reducing manual modelign effort by up to 70% - recognized division-wide for innovation</li>
+            </ul>
+          <p><strong>Kodak Canada ULC - Burnaby, BC        |            May 2022 - Aug 2022</strong></p>
+            <p><em>Quality Tech Co-op</em></p>
+            <ul>
+                <li>Conducted compliance testing and reporting of engineered components for manufactured product</li>
+                <li>Tested using height guages, micrometers, pantone colour grading, coordinate measuring machine</li>
+                <li>Established quality control guides for new components through redlining engineering drawings</li>
+                <li>Escalated non-conformance to purchasers and manufacturers</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+                  
+            <h2 class="section-title">Technical Projects</h2>
+            <hr>
+            <a href="prospike.html">
+                <p onclick="window.location.href = 'prospike.html';"><strong>Volleyball Setting Machine, UBC           |         Sept 2022 - Aug 2023</strong></p>
+                <ul>
+                    <li>Built the UI in C# and XAML with custom set positions and live visual of projected ball trajectory</li>                        <li>Utilized Git workflow and version control for collaborative programming</li>
+                    <li>Selected key components and implemented electrical system for launching and aiming</li>
+                    <li>Created, tested and implemented firmware with serial and I2C communication between two Arduinos</li>
+                </ul>
+            </a>
+            <p><strong>Wireless Strain Gauge, UBC Baja | Sept, 2022 - Dec 2022</strong></p>
+            <ul>
+                <li>Designed a torque gauge that can wirelessly transmit the recorded and calculated data</li>                    <li>Utilized two ESP32s and strain gauges in a 3D printed enclosure</li>
+                <li>Installed strain gauges in Wheatstone bridge configuration to maximize sensitivity</li>
+            </ul>
+            <p><strong>Automatic Blinds, UBC    |                Sept 2022 - Dec 2022</strong></p>
+            <ul>
+                <li>Motorized tilting mechanism of standard blinds</li>
+                <li>Created browser-based interface in HTML connected to ESP32 microcontroller</li>
+                <li>3D modeled and printed motor enclosure and attachment mechanism</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2 class="section-title">Volunteer Experience</h2>
+            <hr>
+            <a>
+                <p><strong>Assistant Volleyball Coach, Earl Marriott Secondary | Sept, 2019 - Dec, 2020</strong></p>
+                <ul>
+                    <li>Instructed grade 8 & junior boy's volleyball teams</li>
+                    <li>Created and deployed strength, conditioning and technical skill drills</li>
+                    <li>Developed leadership skills as a role model for 30 players, encouraging personal growth and teamwork</li>
+                </ul>
+            </a>
+            <a>
+                <p><strong>Recreation Leadership Student, Earl Marriott Secondary | Sept, 2018 - Dec, 2020</strong></p>
+                <ul>
+                    <li>Planned and implemented volleyball and basketball tournament schedules</li>
+                    <li>Lead customized lesson plans for local elementary school gym glasses</li>
+                    <li>Supported EMS athletics through scorekeeping and officiating for over 100 hours</li>
+                </ul>
+            </a>
+        </div>
+        <div class="section">
+            <h2 class="section-title">Awards & Acheivements</h2>
+            <hr>
+            <ul>
+                <li>Innovation, Ledcor Technical Services | 2023</li>
+                <li>UBC Dean's Honor List | 2021, 2022, 2023</li>
+                <li>100% in ELEC 204 - Linear Circuits | 2021</li>
+                <li>BC Excellence, District Authority & Christie McGlashan Memorial Scholarship Recipient| 2020</li>
+                <li>Chemistry 11, Physics 11, French Immersion 11 & Physical Geography 12 academic award, EMS | 2019</li>
+                <li>BC Volleyball Provincial Championchip All-star, EMS | 2018</li>
+                <li>Earl Marriott Secondary Most Valuable Player, Seniro Boys Soccer |  2018</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2 class="section-title">Professional Affiliations</h2>
+            <hr>
+            <ul>
+                <li>Engineers and Geoscientists of British Columbia | 2020 - Present</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2 class="section-title">Interests & Activities</h2>
+            <hr>
+            <ul>
+                <li>Volleyball - 7x provincial champion, 3x UBC Intramural Champion</li>
+                <li>Soccer - 2x Provincial Champion</li>
+                <li>Traveling, Backpacking & Hiking</li>
+                <li>French & Spanish</li>
+                <li>Recently: Tennis, Pickleball, Cycling</li>
+
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

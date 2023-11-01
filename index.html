@@ -42,9 +42,7 @@
             margin: 0 auto;
             padding: 20px;
         }
-        .section {
-            margin-bottom: 20px;
-        }
+        
         .section-title {
             font-weight: bold;
         }
@@ -92,6 +90,81 @@
         .small-text {
             font-size: 14px;
         }
+        /* In your CSS */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        #popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            /* Add other styles for the popup */
+        }
+        .popup {
+            visibility:hidden;
+            width: 80%;
+            background: whitesmoke;
+            padding: 5px;
+        }
+
+        #popup-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
+        #popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            width: 80%;
+            height: 80%;
+            overflow: auto;
+            z-index: 1000;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .resume-section {
+            cursor: pointer;
+            padding-left: 5px;
+            
+            
+        }
+        .resume-section:hover{
+            background: rgb(210, 210, 210);
+            
+            border-radius: 5px;
+            transition: 0.5s;
+        }
+        .hidden{
+            display:none;
+        }
+    
     </style>
 </head>
 <body>
@@ -160,50 +233,56 @@
             </ul>
             
         </div>
-        <div class="section">
-            <h2 class="section-title">Work Experience</h2>
-            <hr>
-            <p><strong>Ledcor Technical Solutions - Vancouver, BC      |              May 2023 - Dec 2023</strong></p>
-            <p><em>Pole Line Design Engineering Co-op</em></p>
-            <ul>
-                <li>Performed Structural Analysis on telecom aerial for FTTH Telus implementation</li>
-                <li>Surveyed hydro and telecom poles throughout lower mainland</li>
-                <li>Created an Excel VBA userform interface to accelerate survey data verification by 30%</li>
-                <li>Utilized Python and SQL to build automation script reducing manual modelign effort by up to 70% - recognized division-wide for innovation</li>
-            </ul>
-          <p><strong>Kodak Canada ULC - Burnaby, BC        |            May 2022 - Aug 2022</strong></p>
-            <p><em>Quality Tech Co-op</em></p>
-            <ul>
-                <li>Conducted compliance testing and reporting of engineered components for manufactured product</li>
-                <li>Tested using height guages, micrometers, pantone colour grading, coordinate measuring machine</li>
-                <li>Established quality control guides for new components through redlining engineering drawings</li>
-                <li>Escalated non-conformance to purchasers and manufacturers</li>
-            </ul>
+        <div class="section" id="work-experience">
+            <div class="resume-section" id="ledcor">
+                <h2 class="section-title">Work Experience</h2>
+                <hr>
+                <p><strong>Ledcor Technical Solutions - Vancouver, BC      |              May 2023 - Dec 2023</strong></p>
+                <p><em>Pole Line Design Engineering Co-op</em></p>
+                <ul>
+                    <li>Performed Structural Analysis on telecom aerial for FTTH Telus implementation</li>
+                    <li>Surveyed hydro and telecom poles throughout lower mainland</li>
+                    <li>Created an Excel VBA userform interface to accelerate survey data verification by 30%</li>
+                    <li>Utilized Python and SQL to build automation script reducing manual modelign effort by up to 70% - recognized division-wide for innovation</li>
+                </ul>
+            </div>
+            <div class="resume-section" id="kodak-quality">
+                <p><strong>Kodak Canada ULC - Burnaby, BC        |            May 2022 - Aug 2022</strong></p>
+                <p><em>Quality Tech Co-op</em></p>
+                <ul>
+                    <li>Conducted compliance testing and reporting of engineered components for manufactured product</li>
+                    <li>Tested using height guages, micrometers, pantone colour grading, coordinate measuring machine</li>
+                    <li>Established quality control guides for new components through redlining engineering drawings</li>
+                    <li>Escalated non-conformance to purchasers and manufacturers</li>
+                </ul>
+            </div>
         </div>
         
         <div class="section">
                   
             <h2 class="section-title">Technical Projects</h2>
             <hr>
-            <a href="prospike.html">
-                <p onclick="window.location.href = 'prospike.html';"><strong>Volleyball Setting Machine, UBC           |         Sept 2022 - Aug 2023</strong></p>
+            <div class="resume-section" id="prospike">
+                <p><strong>Volleyball Setting Machine, UBC           |         Sept 2022 - Aug 2023</strong></p>
                 <ul>
                     <li>Built the UI in C# and XAML with custom set positions and live visual of projected ball trajectory</li>                        <li>Utilized Git workflow and version control for collaborative programming</li>
                     <li>Selected key components and implemented electrical system for launching and aiming</li>
                     <li>Created, tested and implemented firmware with serial and I2C communication between two Arduinos</li>
                 </ul>
-            </a>
+            </div>
             <p><strong>Wireless Strain Gauge, UBC Baja | Sept, 2022 - Dec 2022</strong></p>
             <ul>
                 <li>Designed a torque gauge that can wirelessly transmit the recorded and calculated data</li>                    <li>Utilized two ESP32s and strain gauges in a 3D printed enclosure</li>
                 <li>Installed strain gauges in Wheatstone bridge configuration to maximize sensitivity</li>
             </ul>
-            <p><strong>Automatic Blinds, UBC    |                Sept 2022 - Dec 2022</strong></p>
-            <ul>
-                <li>Motorized tilting mechanism of standard blinds</li>
-                <li>Created browser-based interface in HTML connected to ESP32 microcontroller</li>
-                <li>3D modeled and printed motor enclosure and attachment mechanism</li>
-            </ul>
+            <div class="resume-section" id="automatic-blinds">
+                <p><strong>Automatic Blinds, UBC    |                Sept 2022 - Dec 2022</strong></p>
+                <ul>
+                    <li>Motorized tilting mechanism of standard blinds</li>
+                    <li>Created browser-based interface in HTML connected to ESP32 microcontroller</li>
+                    <li>3D modeled and printed motor enclosure and attachment mechanism</li>
+                </ul>
+                </div>
         </div>
         <div class="section">
             <h2 class="section-title">Volunteer Experience</h2>
@@ -257,7 +336,242 @@
 
             </ul>
         </div>
+        <!-- Inside your HTML -->
+        <div id="popup-container" class="hidden">
+            <div id="popup-content">
+                <span id="close-popup" class="close-button">&times;</span>
+            </div>
+        </div>
+        <div id="prospike-details" class="hidden">
+            <div class="section">
+                <h1>ProSpike - Volleyball Setting Machine | Technical Project</h1>
+                <h2 class="section-title">Project Background</h2>
+                <p>
+                    As part of integrated engineering, every year we form groups around an idea and complete a term long project. We have a lot of flexibility with what we attempt to do, as long as we can show a solid game plan and market value for our project.
+                    
+                </p>
+                <p>
+                    In my 3rd year, four of my peers and I decided to make a machine that can launch a volleyball in a similar fashion to the role played by a setter. 
+                    This would allow users to practice offensive drills, arguably the most fun aspect of the sport, without requiring a setter to be present. The project was named Prospike, and with $400 and 6 months until presenting at Design and Innovation day 2023, we commenced.
+                </p>
+        
+            </div>
+            <div class="section">
+                <h2 class="section-title">Project Description</h2>
+                <p>
+                    There were many aspects of this project to consider, namely the aiming mechanism, launching mechanism, loading mechanism and the user interface.
+                </p>
+                <h4>Aiming</h4>
+                <p> We prioritized the front row positions, so our design had a full range of motion along on axis of tilt. This was accomplidhed by a rotating frame built using alumnium extrusions and a linear actuator attached to one side of the frame.
+                     The linear actuator was controlled by an arduino running a P-Control script, given input from an untrasonic sensor mounted to the linear actuator.
+                </p>
+                <h4>Launching</h4>
+                <p>Luanching was accomplished through two 3D printed wheels independantly connected to two 24V electric motors. These motors are contorlled by a off-the-shelf PWM controller.
+                    We modified this controller by replacing the dial potentiometer with an I2C digital potentiometer, allowing us to programmically contorl the speed of the motors based on the resistance specified.
+                </p>
+                <h4>Loading</h4>
+                <p>To launch the ball, it was raised and pushed between the revolving wheels by a basket mounted to a waterjet cut rack, moved by a stepper rotating a spur gear. 
+                    This enabled us to carefully lift the ball the exact right distance to force it between the wheels to launch. To reload a new ball, the basket was retunred to the bottom and a servo blocking balls from a small ramp moved out fo the way temporarily to allow a single ball to roll into the basket, ready to fire again.
+                </p>
+                <h4>User Interface</h4>
+                <p>The user interface was powered by a HP Spectre computer set up in tablet orientation on a shelf on the machine. The interface was coded using C# and XAML, utilizing Windows Presentation Format and Visual Studio Blend to create an intuitive user interface. On the right side, several of the most common sets are listed as well as options for three custom sets, configurable in the settings page.
+                    Custom sets allow the user to specify the apex height and final potiion of the ball, controlled by a vertical and horizontal slider.
+                </p>
+                <p>
+                    The user can select up to 8 sets then activate the play button, after which the machine will run through the specified sequence of sets. The dispaly also features a custom made volleyball net graphic with a live visual of the ball and it's trajectory, including for the custom sets.
+                </p>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Personal Contributions</h2>
+                <p>
+                    This project was more complex than anything I have done before and was a massive group effort, that being said, I did contribute to many important aspects of the project.
+    
+                </p>
+                <h4>Aiming</h4>
+                <p>
+                    Setting up the linear actuator and establishing the control was my contribution to the aiming mechanism. Due to our limited budget, the linear actuator we acquired did not contain potitional feedback. My solution to this was to use an ultrasonic sensor plentifully avalible for free mounted on the actuator body and a reference target mounted on the actuator arm to calculate the extension.
+                    I also developed the arduino code which received a distance in centimeters from a central arduino through I2C and continously utilized P-control to reach the correct distance and say at that angle. 
+                    PID-control was investigated, but the speed of the linear actuator limited the use of such a responsive system so it was not required.
+                </p>
+                <h4>Launching</h4>
+                <p>
+                    As I was heavily involved with system control, I implemented the replacement of manual control with a digital potentiomter. Also connected through I2C, 127 different resistance levels corresponded to different percentage powers and thus coould be used to control the trajecotry of the ball.
+                </p>
+                <h4>Loading</h4>
+                <p>
+                    Made from an acrylic sheet, I waterjet cut the rack and gear used for the loading mechansim forcing the ball between the launch wheels. I also developed the firmware for the timing of the reload servo synchronyzed with the basket being in the correct position.
+                </p>
+                <h4>User Interface</h4>
+                <p>
+                    The user interface was entirely developed by me. From creating the custom volleyball net graphic, to creating an encypted string to send to the microcontrollers with instructions for operation I worked full stack.
+                    A lot of effort was put into making the user interface as intuitive as possible. As it was used via touch screen, pressing one of the presets changed the display to show that set with a trajectory displayed, and subsequent taps added that set to the sequence.
+                    All of this coding was self-taught throughout this project as I had never used wither XAML or C# prior. Version control was also maintain via GitHub, which was essential as the computer used to run the program was not the same computer I developed the code on.
+                </p>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Challenges and Solutions</h2>
+                <h4>Custom Sets & Live Trajectory Display</h4>
+                <p>
+                    I really wanted to display the trajectory of the ball. This could be done easily for the standard sets by drawing out all the options and changing the display when they get selected, but this would not work for the cutom sets.
+                    I investigated many ways of doing this, and settled on creating a bezier curve. If you are unfamiliar with bezier curves, they are curves with a start and end point, as well as two control points. These control points can be used to make a parabolic shape with variable slope, perfect for displaying the trajectory of a ball.
+    
+                </p>
+                <p>
+                    By changing the control point's x and y positions according to the sliders, the drawing could be updated instantly. Additionally, by calculating the different between the start point and the first contol point, the slope of tangent line to launch could be calculated from the display itself. This allows the custom sets on the interface to actually 
+                    translate to a calculated launch angle, and similarly the distance between control point and start point were used to calculate the required motor speed, found from baseline testing at set power levels.
+                </p>
+            </div>
+
+        </div>
+        <div id="automatic-blinds-details" class="hidden">
+            <div class="section">
+                <h1> Automatic Blinds | Technical Project</h1>
+                <h2 class="section-title">Project Background</h2>
+                <p>
+                    As part of integrated engineering, every year we form groups around an idea and complete a term long project. We have a lot of flexibility with what we attempt to do, as long as we can show a solid game plan and market value for our project. For IGEN 230, out budget is $200.
+                    
+                </p>
+                <p>
+                    In my 2nd year, five of my peers and I decided we wanted to make a device that helps us be well rested and adds convenience to our lives.
+                    We decided to build a device that could bring manual window blinds into the 21st centursy as an IoT enabled device. Not only reducing the effort of letting more natural light and air into a room, but also allowing scheduling so in the mornings natural light could enter at a chosen time.
+                </p>
+        
+            </div>
+            <div class="section">
+                <h2 class="section-title">Project Description</h2>
+                <p>
+                    Our final product was a simple but compact attachment to the tilting mechnaism of blinds, controlled by an ESP32 powered by a portable battery bank. This system could be accessed via WiFi access point and the user could interact pick the state of the blinds from any smart device.
+                </p>
+                <h4>Motor and Mounting Bracket</h4>
+                <p> 
+                    To physically interact with the blinds, we had to rotate a small hook near the ceiling. This is traditionally attached to a hanging stick that when rotated controls the angle of the blind slats.
+                    This was achieved using a simple 12V motor enclosed ina  wall-mounted 3D printed bracket with adjustable positions to fit mutliple kinds of blinds. A small joint hook was also 3D printed and attached to the motor shaft to act as the interface.
+                </p>
+                <h4>ESP32 and Accelerometer</h4>
+                <p>
+                    Powering this system was an ESP32 microcontroller. We chose this becuase of the practical functionality of the device, as well as the low profile and power consumption. 
+                    This devices features wifi and bluetooth connectivity, whichw ere both viable optiosn we wanted to explore at the inception of the project. Ultimately we settled on WiFi due to user convenience, however we were forced to use the device as an access point. Our final demonstration of the project at Design and Innovation Day 2022 took place in the Life Science building on UBC Vancouver's campus, and due to strict SSID login protocols we were not able to connect to public WiFi.
+                    Most of the functionality was developed in station mode on a private network for ease of use, but the final version was hosted directly from the ESP32-hosted webpage.
+                </p>
+                <p>
+                    Connected to the ESP32 was a L298N H-Bridge motor controller as well as a ADXL335 accelerometer. Both of these components were chosen based on their valid functionality and ease of acquisition.
+                    The L298N controller interfaced between the ESP32 and the 12V motor. Becuase the load was so small, we were able to run the motor off of only 5 volts without any issues.
+                    The accelerometer was attached to one of the blind slats and gave positional feedbakc to the ESP32 to ensure the sleected orientation was accurate.
+                </p>
+            
+                <h4>User Interface</h4>
+                <p>
+                    As stated previously, the webpage used to control this device was hosted directly from the ESP32. This involved writing HTML and CSS code directly to the firmware of the ESP32, which was quite limmiting in terms of design and functionaily, and was definitly identified as an area of improvement for the future.
+                    A simple button selection allowed the user to directly contorl the device, as well as a secondary window where users can pick a time each day for the blinds to open and a time they close. This is meant to be scheduled with the user's normal sleep routine to allow natural light in the morning to wake them more peacefully than a sound-based alarm clock.
+                </p>
+                <p>
+                    The user can select up to 8 sets then activate the play button, after which the machine will run through the specified sequence of sets. The dispaly also features a custom made volleyball net graphic with a live visual of the ball and it's trajectory, including for the custom sets.
+                </p>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Personal Contributions</h2>
+                <p>
+                    This project originated from my own elevator pitch after I saw a set of automated blinds and was very jealous. As such, I had a very braod hand throughout the projects.
+                </p>
+                <h4>Mounting Bracket and Hook</h4>
+                <p>
+                    I designed the brakcet used to mount the motor to the wall and the interfacing hook between motor and blinds. several gorup members contributed models for this task, but after group review mine were selected to print due to aesthetic appeal and functionality.
+                    The bracket is a simple rectiangular shape allowing the motor to slide inside prior to attaching to the wall, with many different posiitons possible through holes long the length that lien up with holes on the motor. This way the same bracket could be used for different sizes of blinds.
+                </p>
+                <h4>ESP32 and Accelerometer</h4>
+                <p>
+                    I was the most hands-on with the ESP32 and other hardware for this project. Guided significantly from <a href="https://randomnerdtutorials.com"> Random Nerd Tutorials</a>, I created an access point system that could take input from a connected mobile user and translate it into microcontroller logic. I also implemented the accelerometer and wrote the code translating gyroscopic data into blind position.
+                </p>
+                <h4>User Interface</h4>
+                <p>
+                    Since the HTML webpage was written to the ESP32 firmware, I spearheaded both endeavours. I have some basic HTML and CSS experience, but this project had some unexpected complexity getting it to function which took many unit tests and iterations. Ultimately, a functional webpage was available for viwers to connect to and control the blinds on the day of out presentation.
+                </p>
+                <h4>Frame</h4>
+                <p>
+                    We needed a way of demonstarting the functionality of our project, so I contructed a simple frame out of spare wood and installed the system. As the wood was spare from our workshop, it was not the most pleasing but it was storng and fucntional, and the I base design prevented the blinds from fallign over when stood up on their own.
+                </p>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Challenges and Solutions</h2>
+                <h4>Full open and close automation of blinds</h4>
+                <p>
+                    When the project first started, the plan was to fully control the opening and closign of the blinds and not just adjust the tilt. At it's inception, this functionality was not part of my own scope of work.
+                    As the project progressed, there was veryb little progress on this front and eventually we determined we needed tochange the scope of the project to focus on just the tilt, which allows for 90% of the light to enter regardless and by only controlling the tilt, the manual mechanism for opening and closing the blinds was still perfectly intact and inaccessible.
+
+                </p>
+                <p>
+                    While I would have loved to have the full fucntionality, we recognised that our minimum viable product did not contain that feature so we invested more time in the tilting fucntionality. It was disppointing, but an important lesson not to get stuck underwater and to focus on delivering a solution on schedule and budget.
+                </p>
+            </div>
+        </div>
+        <div id="ledcor-details" class="hidden">
+            <h1>Ledcor | Work Experience</h1>
+            <div class="section">
+                <h2 class="section-title">Company Background</h2>
+                <p>Ledcor Group of Companies spans many industries and countries, but I fall under the distinction of LTS, or Ledcor Technical Services. This is a utiltiy comapny working throughout Canada and the United States with expertise in fibre optic distribution networks for both design and contruction.</p>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Job Description</h2>
+                    <p>As a Pole Line Design Engineer, my team is responsable for doign structural analysis on aerial telecomm lines to ensure they currently adhere to standards and can tolerate new additions.
+                        More specifically, as a Co-op student it is my responsabilty to do the foundational work of modeling the communities we are inspecting, which includes pre-populating maps with pole locations, connecting appropriate spans, soemtimes going into the field and collecting data about the poles using laser measureing technology, and modeling the community in an industry-utilized engineering software.
+                        Frequently my workload consists of multiple communities concurrently doing tasks lile quality control on fielded data, communicating with fielders about key areas to stay on schedule, all while while modeling detailed designs for different communities.
+                    </p>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Lasting Contributions</h2>
+                <p>While this position typically attracts more civil and mechanically inclined people, I have an itch for software development and an insatiable curosity about why things are the way they are. 
+                    About half way into my 8-month term, after I was very familair with the exising process, I investigated the modeling software we used and determined there was a way we could save up to 70% of the modeling effort if we used a different type of data improt.
+                    To keep it simple, the exisitng process when I joined involved importing a CSV file with basic pole information like latitude and longitude, pole height, type, etc. With the new method I developed, import includes spans between poles, anchors modeled exactly as fielded or even more accruately, hardware like transformers imported directly, and more. After this new import, the only thign the designer needs to do is quality control the community and add in a few unsupported attributes, which takes a fraction of the previous time.
+                </p>
+                <h4>Code</h4>
+                <p>The basis for this program uses python to manipulate data from an excel sheet and trasnfer this data to an SQLite database, which is a supported improt method. </p>
+                <h4>Communication</h4>
+            </div>
+        </div>
+        <div id="kodak-quality-details" class="hidden">
+            <p>Work in progress. Check back soon for more details</p>
+        </div>
+
 
     </div>
+    <script>
+        /* In your JavaScript (script.js) */
+        document.addEventListener("DOMContentLoaded", function () {
+            const resumeSections = document.querySelectorAll(".resume-section");
+            const popupContainer = document.getElementById("popup-container");
+            const closePopup = document.getElementById("close-popup");
+
+            resumeSections.forEach(function (section) {
+                section.addEventListener("click", function () {
+                    // Show the pop-up
+                    popupContainer.style.display = "block";
+
+                    // Get the ID of the section clicked
+                    const sectionId = section.id;
+
+                    // Load the content from the separate HTML section
+                    const contentElement = document.getElementById(sectionId + "-details");
+                    const popupContent = document.getElementById("popup-content");
+                    popupContent.innerHTML = contentElement.innerHTML;
+                });
+            });
+
+            closePopup.addEventListener("click", function () {
+                // Close the pop-up
+                popupContainer.style.display = "none";
+            });
+
+            popupContainer.addEventListener("click", function (event) {
+                // Close the pop-up when clicking on the background
+                if (event.target === popupContainer) {
+                    popupContainer.style.display = "none";
+                }
+            });
+        });
+
+
+        
+
+    </script>
 </body>
 </html>
