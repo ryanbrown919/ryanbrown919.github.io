@@ -233,10 +233,11 @@
             </ul>
             
         </div>
-        <div class="section" id="work-experience">
+        <div class="section">
+            <h2 class="section-title">Work Experience</h2>
+            <hr>
             <div class="resume-section" id="ledcor">
-                <h2 class="section-title">Work Experience</h2>
-                <hr>
+                
                 <p><strong>Ledcor Technical Solutions - Vancouver, BC      |              May 2023 - Dec 2023</strong></p>
                 <p><em>Pole Line Design Engineering Co-op</em></p>
                 <ul>
@@ -347,12 +348,12 @@
                 <h1>ProSpike - Volleyball Setting Machine | Technical Project</h1>
                 <h2 class="section-title">Project Background</h2>
                 <p>
-                    As part of integrated engineering, every year we form groups around an idea and complete a term long project. We have a lot of flexibility with what we attempt to do, as long as we can show a solid game plan and market value for our project.
+                    As part of Integrated Engineering, every year we form groups around an idea and complete a term-long project. We have a lot of flexibility with what we attempt to do, as long as we can show a solid game plan and market value for our project. For IGEN 330, our budget was $400
                     
                 </p>
                 <p>
-                    In my 3rd year, four of my peers and I decided to make a machine that can launch a volleyball in a similar fashion to the role played by a setter. 
-                    This would allow users to practice offensive drills, arguably the most fun aspect of the sport, without requiring a setter to be present. The project was named Prospike, and with $400 and 6 months until presenting at Design and Innovation day 2023, we commenced.
+                    In my 3rd year, four of my peers and I decided to make a machine that can launch a volleyball in a similar fashion to a human setter. 
+                    This would allow users to practice offensive drills, arguably the most fun aspect of the sport, without requiring a setter to be present. The project was named Prospike, and with 6 months until presenting at Design and Innovation day 2023, we commenced.
                 </p>
         
             </div>
@@ -362,57 +363,57 @@
                     There were many aspects of this project to consider, namely the aiming mechanism, launching mechanism, loading mechanism and the user interface.
                 </p>
                 <h4>Aiming</h4>
-                <p> We prioritized the front row positions, so our design had a full range of motion along on axis of tilt. This was accomplidhed by a rotating frame built using alumnium extrusions and a linear actuator attached to one side of the frame.
-                     The linear actuator was controlled by an arduino running a P-Control script, given input from an untrasonic sensor mounted to the linear actuator.
+                <p> We prioritized the front row positions, so our design had a full range of motion along one axis of tilt, or else it can hit anywhere along the next, around two feet off of the netting. This was accomplished by a rotating frame built using alumnium extrusions and a linear actuator attached to one end of the frame.
+                     The linear actuator was controlled by an arduino running a P-Control script, given input from an ultrasonic sensor mounted to the linear actuator.
                 </p>
                 <h4>Launching</h4>
-                <p>Luanching was accomplished through two 3D printed wheels independantly connected to two 24V electric motors. These motors are contorlled by a off-the-shelf PWM controller.
-                    We modified this controller by replacing the dial potentiometer with an I2C digital potentiometer, allowing us to programmically contorl the speed of the motors based on the resistance specified.
+                <p>Launching was accomplished through two 3D printed wheels independantly connected to two 24V electric motors. These motors are contorlled by a off-the-shelf PWM controller.
+                    We modified this controller by replacing the dial potentiometer with an I2C digital potentiometer, allowing us to programmically control the speed of the motors based on the resistance specified.
                 </p>
                 <h4>Loading</h4>
-                <p>To launch the ball, it was raised and pushed between the revolving wheels by a basket mounted to a waterjet cut rack, moved by a stepper rotating a spur gear. 
-                    This enabled us to carefully lift the ball the exact right distance to force it between the wheels to launch. To reload a new ball, the basket was retunred to the bottom and a servo blocking balls from a small ramp moved out fo the way temporarily to allow a single ball to roll into the basket, ready to fire again.
+                <p>To launch the ball, it was raised and pushed between the revolving wheels by a halo mounted to a waterjet cut rack, moved by a stepper rotating a spur gear. 
+                    This enabled us to carefully lift the ball the exact right distance to force it between the wheels to launch. To reload a new ball, the basket was returned to the bottom and a servo blocking balls from a small ramp moves out of the way temporarily to allow a single ball to roll into the basket, ready to fire again.
                 </p>
                 <h4>User Interface</h4>
                 <p>The user interface was powered by a HP Spectre computer set up in tablet orientation on a shelf on the machine. The interface was coded using C# and XAML, utilizing Windows Presentation Format and Visual Studio Blend to create an intuitive user interface. On the right side, several of the most common sets are listed as well as options for three custom sets, configurable in the settings page.
-                    Custom sets allow the user to specify the apex height and final potiion of the ball, controlled by a vertical and horizontal slider.
+                    On the left side, the display features a custom made volleyball net graphic with a live visual of the ball and its trajectory, including for the custom sets. Custom sets allow the user to specify the apex height and final potiion of the ball, controlled by a vertical and horizontal slider.
                 </p>
                 <p>
-                    The user can select up to 8 sets then activate the play button, after which the machine will run through the specified sequence of sets. The dispaly also features a custom made volleyball net graphic with a live visual of the ball and it's trajectory, including for the custom sets.
+                    The user can select up to 8 sets then activate the play button, after which the machine will run through the specified sequence of sets. As the sequence plays, the next set is displayed on screen.
                 </p>
             </div>
             <div class="section">
                 <h2 class="section-title">Personal Contributions</h2>
                 <p>
-                    This project was more complex than anything I have done before and was a massive group effort, that being said, I did contribute to many important aspects of the project.
+                    This project was more complex than anything I have done before and was a massive group effort. That being said, I did contribute to many important aspects of the project.
     
                 </p>
                 <h4>Aiming</h4>
                 <p>
-                    Setting up the linear actuator and establishing the control was my contribution to the aiming mechanism. Due to our limited budget, the linear actuator we acquired did not contain potitional feedback. My solution to this was to use an ultrasonic sensor plentifully avalible for free mounted on the actuator body and a reference target mounted on the actuator arm to calculate the extension.
-                    I also developed the arduino code which received a distance in centimeters from a central arduino through I2C and continously utilized P-control to reach the correct distance and say at that angle. 
+                    Setting up the linear actuator and establishing the control was my contribution to the aiming mechanism. Due to our limited budget, the linear actuator we acquired did not contain positional feedback. My solution to this was to use an ultrasonic sensor, plentifully avalible for free in our workshop, mounted on the actuator body and a reference target mounted on the actuator arm to calculate the extension.
+                    I also developed the arduino code which received a distance in centimeters from another arduino through I2C and continously utilized P-control to reach the correct distance and keep the frame at the correct angle, or else accelerate the frame in the required direction.
                     PID-control was investigated, but the speed of the linear actuator limited the use of such a responsive system so it was not required.
                 </p>
                 <h4>Launching</h4>
                 <p>
-                    As I was heavily involved with system control, I implemented the replacement of manual control with a digital potentiomter. Also connected through I2C, 127 different resistance levels corresponded to different percentage powers and thus coould be used to control the trajecotry of the ball.
+                    As I was heavily involved with system control, I implemented the replacement of manual speed control with a digital potentiomter. Also connected through I2C, 127 different resistance levels corresponded to different percentage powers and thus coould be used to control the trajectory of the ball.
                 </p>
                 <h4>Loading</h4>
                 <p>
-                    Made from an acrylic sheet, I waterjet cut the rack and gear used for the loading mechansim forcing the ball between the launch wheels. I also developed the firmware for the timing of the reload servo synchronyzed with the basket being in the correct position.
+                    Made from an acrylic sheet, I waterjet cut the rack and gear used for the loading mechansim forcing the ball upwards between the launch wheels. I also developed the firmware for the timing of the reload servo synchronyzed with the halo being in the correct position.
                 </p>
                 <h4>User Interface</h4>
                 <p>
-                    The user interface was entirely developed by me. From creating the custom volleyball net graphic, to creating an encypted string to send to the microcontrollers with instructions for operation I worked full stack.
-                    A lot of effort was put into making the user interface as intuitive as possible. As it was used via touch screen, pressing one of the presets changed the display to show that set with a trajectory displayed, and subsequent taps added that set to the sequence.
-                    All of this coding was self-taught throughout this project as I had never used wither XAML or C# prior. Version control was also maintain via GitHub, which was essential as the computer used to run the program was not the same computer I developed the code on.
+                    The user interface was entirely developed by me. From creating the custom volleyball net graphic, to creating an encoded string to send to the microcontrollers with instructions for operation I developed full stack.
+                    A lot of effort was put into making the user interface as intuitive as possible. As it was used via touch screen, pressing one of the presets changed the display to show that set, with a trajectory, displayed and subsequent taps added that set to the sequence.
+                    All of this coding was self-taught throughout this project as I had never used either XAML or C# prior. Version control was also maintained via GitHub, which was essential as the computer used to run the program was not the same computer I developed the code on.
                 </p>
             </div>
             <div class="section">
                 <h2 class="section-title">Challenges and Solutions</h2>
                 <h4>Custom Sets & Live Trajectory Display</h4>
                 <p>
-                    I really wanted to display the trajectory of the ball. This could be done easily for the standard sets by drawing out all the options and changing the display when they get selected, but this would not work for the cutom sets.
+                    I really wanted to display the trajectory of the ball. This could be done easily for the standard sets by drawing out all the options and changing the display when they get selected, but this would not work for the custom sets.
                     I investigated many ways of doing this, and settled on creating a bezier curve. If you are unfamiliar with bezier curves, they are curves with a start and end point, as well as two control points. These control points can be used to make a parabolic shape with variable slope, perfect for displaying the trajectory of a ball.
     
                 </p>
@@ -524,8 +525,23 @@
                     To keep it simple, the exisitng process when I joined involved importing a CSV file with basic pole information like latitude and longitude, pole height, type, etc. With the new method I developed, import includes spans between poles, anchors modeled exactly as fielded or even more accruately, hardware like transformers imported directly, and more. After this new import, the only thign the designer needs to do is quality control the community and add in a few unsupported attributes, which takes a fraction of the previous time.
                 </p>
                 <h4>Code</h4>
-                <p>The basis for this program uses python to manipulate data from an excel sheet and trasnfer this data to an SQLite database, which is a supported improt method. </p>
+                <p>The basis for this program uses python to manipulate data from an excel sheet and trasnfer this data to an SQLite database, which is a supported improt method. 
+                    While this process is quite simple, the program quickly become 2000+ lines of code as different scenarios, incomplete data and other issues arose and were addressed. The code is now very robust agaisnt incomplete or incorrect data, features calculations previously had to be done manually, and compeltes standard assumptions if data is incomplete.
+                </p>
                 <h4>Communication</h4>
+                <p>One of the biggest acheivements of this process was the communication needed to make it a reality. Within my own team I was able to hear feedbakc and iterate accordingly to create a more robust and accurate import. Outside of my team,
+                    I was in direct contact with the principal engineer at the company developing the modelign software. While the SQlite fucntionality existed, it was quite incomplete and promised many features that it could not deliver. 
+                    I was able to go back and forth with this engineer and rpovide test files and examples, and through this collaboration an update for the software was released specifically to deal with my feedback. This added functionality opened the door for further automation and fulfilled the original promises of the import type.
+                </p>
+                <h4>Documentation</h4>
+                <p>
+                    Beyond the code itself, which also had to be extensively commented and explained, a lot of documentation was required to bring this tool to my fellow team members. A lot of the exsiting procedures had to be modified, specific data needs to be in place and generlaly a lot more attention to the data is required since it is getting imported directly.
+                    I created lengthy and detailed documentation outlining step-by-step what to do, as well as giving logic explanation as to why soemthign might have not worked or why it needs to eb the way it was. All of this documentation means the tool goes beyond a tool and became an official alteration to the team's workflow.
+                </p>
+                <h4>Innovation Submission</h4>
+                <p>Every year employees are encouraged to submit submissions about their innovations to be voted upon by peers. This tool that I developed was submitted as an innovation, and has received division-wide attention.
+                    
+                </p>
             </div>
         </div>
         <div id="kodak-quality-details" class="hidden">
