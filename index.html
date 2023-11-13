@@ -214,7 +214,7 @@
                         <li>Structural Analysis</li>
                         <li>Field Surveying</li>
                         <li>MIG, TIG Welding</li>
-                        <li></li>
+                        <li>3D Modeling</li>
                     </ul>
                 </div>
                 <div class="skills-column">
@@ -236,7 +236,7 @@
                 <p><strong> University of British Columbia | Expected Graduation: May 2025</strong></p>
                 <p><i>Bachlor of Applied Science - Integrated Engineering</i></p>
                 <ul>
-                    <li><i>Entering Year 4 Sept 2024 - Cumulite Average 86.5%</i></li>
+                    <li><i>Entering Year 4 Sept 2024 - Cumulitive Average 86.5%</i></li>
                 </ul>
             </div>
             
@@ -251,8 +251,8 @@
                 <ul>
                     <li>Performed Structural Analysis on telecom aerial for FTTH Telus implementation</li>
                     <li>Surveyed hydro and telecom poles throughout lower mainland</li>
-                    <li>Created an Excel VBA userform interface to accelerate survey data verification by 30%</li>
                     <li>Utilized Python and SQL to build automation script reducing manual modelign effort by up to 70% - recognized division-wide for innovation</li>
+                    <li>Created custom GUI featuring interactive map for telecomm cable allocation, further accerlating modeling</li>
                 </ul>
             </div>
             <div class="resume-section" id="kodak-quality">
@@ -572,19 +572,19 @@
                     There were many aspects of this project to consider, namely the aiming mechanism, launching mechanism, loading mechanism and the user interface.
                 </p>
                 <h4>Aiming</h4>
-                <p> We prioritized the front row positions, so our design had a full range of motion along one axis of tilt, or else it can hit anywhere along the next, around two feet off of the netting. This was accomplished by a rotating frame built using alumnium extrusions and a linear actuator attached to one end of the frame.
+                <p> We prioritized the front row positions, so our design had a full range of motion along one axis of tilt, or else it can hit anywhere along the net, around two feet off of the netting. This was accomplished by a rotating frame built using alumnium extrusions and a linear actuator attached to one end of the frame.
                      The linear actuator was controlled by an arduino running a P-Control script, given input from an ultrasonic sensor mounted to the linear actuator.
                 </p>
                 <h4>Launching</h4>
-                <p>Launching was accomplished through two 3D printed wheels independantly connected to two 24V electric motors. These motors are contorlled by a off-the-shelf PWM controller.
-                    We modified this controller by replacing the dial potentiometer with an I2C digital potentiometer, allowing us to programmically control the speed of the motors based on the resistance specified.
+                <p>Launching was accomplished through two 3D printed wheels independantly connected to two 24V electric motors. These motors are contorlled by an off-the-shelf PWM controller.
+                    We modified this controller by replacing the rotaty potentiometer with an I2C digital potentiometer, allowing us to programmically control the speed of the motors based on the resistance specified.
                 </p>
                 <h4>Loading</h4>
-                <p>To launch the ball, it was raised and pushed between the revolving wheels by a halo mounted to a waterjet cut rack, moved by a stepper rotating a spur gear. 
-                    This enabled us to carefully lift the ball the exact right distance to force it between the wheels to launch. To reload a new ball, the basket was returned to the bottom and a servo blocking balls from a small ramp moves out of the way temporarily to allow a single ball to roll into the basket, ready to fire again.
+                <p>To launch the ball, it was raised and pushed between the rotating wheels by a halo mounted to a waterjet cut rack, moved by a stepper rotating a spur gear. 
+                    This enabled us to carefully lift the ball the exact right distance to force it between the wheels to launch. To reload a new ball, the halo was returned to the bottom and a servo blocking balls from a small ramp moves out of the way temporarily to allow a single ball to roll into the halo, ready to launch again.
                 </p>
                 <h4>User Interface</h4>
-                <p>The user interface was powered by a HP Spectre computer set up in tablet orientation on a shelf on the machine. The interface was coded using C# and XAML, utilizing Windows Presentation Format and Visual Studio Blend to create an intuitive user interface. On the right side, several of the most common sets are listed as well as options for three custom sets, configurable in the settings page.
+                <p>The user interface was powered by a HP Spectre Laptop set up in tablet orientation on a shelf on the machine. The interface was coded using C# and XAML, utilizing Windows Presentation Format and Visual Studio Blend to create an intuitive user interface. On the right side, several of the most common sets are listed as well as options for three custom sets, configurable in the settings page.
                     On the left side, the display features a custom made volleyball net graphic with a live visual of the ball and its trajectory, including for the custom sets. Custom sets allow the user to specify the apex height and final potiion of the ball, controlled by a vertical and horizontal slider.
                 </p>
                 <p>
@@ -594,7 +594,7 @@
             <div class="section">
                 <h2 class="section-title">Personal Contributions</h2>
                 <p>
-                    This project was more complex than anything I have done before and was a massive group effort. That being said, I did contribute to many important aspects of the project.
+                    This project was more complex than anything I have done before and was a massive group effort. That being said, I personally contributed significantly to many important aspects of the project.
     
                 </p>
                 <h4>Aiming</h4>
@@ -605,7 +605,7 @@
                 </p>
                 <h4>Launching</h4>
                 <p>
-                    As I was heavily involved with system control, I implemented the replacement of manual speed control with a digital potentiomter. Also connected through I2C, 127 different resistance levels corresponded to different percentage powers and thus coould be used to control the trajectory of the ball.
+                    As I was heavily involved with system control, I implemented the replacement of manual speed control with a digital potentiomter. Also connected through I2C, 127 different resistance levels corresponded to different percentage powers and thus could be used to control the trajectory of the ball.
                 </p>
                 <h4>Loading</h4>
                 <p>
@@ -622,13 +622,20 @@
                 <h2 class="section-title">Challenges and Solutions</h2>
                 <h4>Custom Sets & Live Trajectory Display</h4>
                 <p>
-                    I really wanted to display the trajectory of the ball. This could be done easily for the standard sets by drawing out all the options and changing the display when they get selected, but this would not work for the custom sets.
+                    I really wanted to display the trajectory of the ball. This could be done easily for the standard sets by drawing out all the trajectories as seperate images and changing the display when they get selected, but this would not work for the custom sets.
                     I investigated many ways of doing this, and settled on creating a bezier curve. If you are unfamiliar with bezier curves, they are curves with a start and end point, as well as two control points. These control points can be used to make a parabolic shape with variable slope, perfect for displaying the trajectory of a ball.
     
                 </p>
                 <p>
-                    By changing the control point's x and y positions according to the sliders, the drawing could be updated instantly. Additionally, by calculating the different between the start point and the first contol point, the slope of tangent line to launch could be calculated from the display itself. This allows the custom sets on the interface to actually 
+                    By changing the control point's x and y positions according to the sliders, the drawing could be updated instantly. Additionally, by calculating the difference in coordinates between the start point and the first contol point, the slope of tangent line to launch could be calculated from the display itself. This allows the custom sets on the interface to actually 
                     translate to a calculated launch angle, and similarly the distance between control point and start point were used to calculate the required motor speed, found from baseline testing at set power levels.
+                </p>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Conclusion</h2>
+                <p>
+                    As a final result, this project was a great success. We had a functioning machine that could store up to 8 balls, a interface that could have custom programmed sets, and launch the ball at significant velocity, consistently. At design and Innovation Day 2023, we did around 40 test launches to demonstrate this project, and out of those every single one landed in the 2x3 foot box we marked out on the ground for that demo set.
+                    It so happens that a nother group undertook the same project a year above us during the same term, and it was unanimous among those we talked to that our solution was more intuitive, more consistent, more reliable and overall a better product for the user.
                 </p>
             </div>
 
@@ -718,34 +725,34 @@
             <h1>Ledcor | Work Experience</h1>
             <div class="section">
                 <h2 class="section-title">Company Background</h2>
-                <p>Ledcor Group of Companies spans many industries and countries, but I fall under the distinction of LTS, or Ledcor Technical Services. This is a utiltiy comapny working throughout Canada and the United States with expertise in fibre optic distribution networks for both design and contruction.</p>
+                <p>Ledcor Group of Companies spans many industries and countries, but I fall under the distinction of LTS, or Ledcor Technical Services. This is a utiltiy company working throughout Canada and the United States with expertise in fibre optic distribution networks for both design and contruction.</p>
             </div>
             <div class="section">
                 <h2 class="section-title">Job Description</h2>
-                    <p>As a Pole Line Design Engineer, my team is responsable for doign structural analysis on aerial telecomm lines to ensure they currently adhere to standards and can tolerate new additions.
-                        More specifically, as a Co-op student it is my responsabilty to do the foundational work of modeling the communities we are inspecting, which includes pre-populating maps with pole locations, connecting appropriate spans, soemtimes going into the field and collecting data about the poles using laser measureing technology, and modeling the community in an industry-utilized engineering software.
-                        Frequently my workload consists of multiple communities concurrently doing tasks lile quality control on fielded data, communicating with fielders about key areas to stay on schedule, all while while modeling detailed designs for different communities.
+                    <p>As a Pole Line Design Engineer, my team is responsable for structural analysis on aerial telecomm lines to ensure they currently adhere to standards and can tolerate new additions.
+                        More specifically, as a Co-op student it is my responsabilty to do the foundational work of modeling the communities we are inspecting, which includes pre-populating maps with pole locations, connecting spans, occasionaly going into the field and collecting data about the poles using laser measuring technology, and modeling the community in an industry-utilized engineering software.
+                        Frequently my workload consists of multiple communities concurrently, doing tasks like quality control on fielded data, communicating with fielders about key areas to stay on schedule, all while modeling detailed designs for different communities.
                     </p>
             </div>
             <div class="section">
                 <h2 class="section-title">Lasting Contributions</h2>
                 <p>While this position typically attracts more civil and mechanically inclined people, I have an itch for software development and an insatiable curosity about why things are the way they are. 
-                    About half way into my 8-month term, after I was very familair with the exising process, I investigated the modeling software we used and determined there was a way we could save up to 70% of the modeling effort if we used a different type of data improt.
-                    To keep it simple, the exisitng process when I joined involved importing a CSV file with basic pole information like latitude and longitude, pole height, type, etc. With the new method I developed, import includes spans between poles, anchors modeled exactly as fielded or even more accruately, hardware like transformers imported directly, and more. After this new import, the only thign the designer needs to do is quality control the community and add in a few unsupported attributes, which takes a fraction of the previous time.
+                    About half way into my 8-month term, after I was very familair with the existing process, I investigated the modeling software we used and determined there was a way we could save up to 70% of the modeling effort if we used a different type of data import.
+                    To keep it simple, the existing process when I joined involved importing a CSV file with basic pole information like latitude and longitude, pole height, type, etc. With the new method I developed, import includes spans between poles, anchors modeled exactly as fielded or even more accruately, hardware like transformers imported directly, and more. After this new import, the only thing the designer needs to do is quality control the community and add in a few unsupported attributes, which takes a fraction of the previous time.
                 </p>
                 <h4>Code</h4>
-                <p>The basis for this program uses python to manipulate data from an excel sheet and trasnfer this data to an SQLite database, which is a supported improt method. 
-                    While this process is quite simple, the program quickly become 2000+ lines of code as different scenarios, incomplete data and other issues arose and were addressed. The code is now very robust agaisnt incomplete or incorrect data, features calculations previously had to be done manually, and compeltes standard assumptions if data is incomplete.
+                <p>The basis for this program uses python to manipulate data from an excel sheet and transfer this data to an SQLite database, which is a supported import filetype along with JSON. 
+                    While this process is quite simple, the program quickly become 2000+ lines of code as different scenarios, incomplete data and other issues arose and were addressed. The code is now very robust against incomplete or incorrect data, features calculations which previously had to be done manually, and completes standard assumptions if data is incomplete.
                 </p>
                 <h4>Communication</h4>
-                <p>One of the biggest acheivements of this process was the communication needed to make it a reality. Within my own team I was able to hear feedbakc and iterate accordingly to create a more robust and accurate import. Outside of my team,
-                    I was in direct contact with the principal engineer at the company developing the modelign software. While the SQlite fucntionality existed, it was quite incomplete and promised many features that it could not deliver. 
-                    I was able to go back and forth with this engineer and rpovide test files and examples, and through this collaboration an update for the software was released specifically to deal with my feedback. This added functionality opened the door for further automation and fulfilled the original promises of the import type.
+                <p>One of the biggest acheivements of this process was the communication needed to make it a reality. Within my own team I was able to hear feedback and iterate accordingly to create a more robust and accurate import and user friendly experience. Outside of my team,
+                    I was in direct contact with the principal engineer at the company developing the modeligng software. While the SQlite functionality existed, it was quite incomplete and promised many features that it could not deliver. 
+                    I was able to go back and forth with this engineer and provide test files and examples, and through this collaboration an update for the software was released specifically to deal with my feedback. This added functionality opened the door for further automation and fulfilled the original key promises of the import type.
                 </p>
                 <h4>Documentation</h4>
                 <p>
-                    Beyond the code itself, which also had to be extensively commented and explained, a lot of documentation was required to bring this tool to my fellow team members. A lot of the exsiting procedures had to be modified, specific data needs to be in place and generlaly a lot more attention to the data is required since it is getting imported directly.
-                    I created lengthy and detailed documentation outlining step-by-step what to do, as well as giving logic explanation as to why soemthign might have not worked or why it needs to eb the way it was. All of this documentation means the tool goes beyond a tool and became an official alteration to the team's workflow.
+                    Beyond the code itself, which is also extensively commented and explained, a lot of documentation was required to bring this tool to my fellow team members. A lot of the exsiting procedures had to be modified, specific data needs to be in place and generally a lot more attention to the data is required since it is getting imported directly.
+                    I created lengthy and detailed documentation outlining step-by-step guides, as well as giving logic explanation as to why soemthing might have not worked or why it needs to be the way it was. All of this documentation means the tool goes beyond a script and became an official alteration to the team's workflow.
                 </p>
                 <h4>Innovation Submission</h4>
                 <p>Every year employees are encouraged to submit submissions about their innovations to be voted upon by peers. This tool that I developed was submitted as an innovation, and has received division-wide attention.
@@ -754,7 +761,40 @@
             </div>
         </div>
         <div id="kodak-quality-details" class="hidden">
-            <p>Work in progress. Check back soon for more details</p>
+            <div class="section">
+                <h2 class="section-title">Company Background</h2>
+                <p>
+                    Kodak Canada ULC is a division of Eastman Kodak Company, which used to be one of the bigegst companies in the world. Better known for their film cameras, Kodak has shifted into primarily industrial printers. Their cutting edge laser technology keeps them alive in an ever growing digital industry.
+                    The Burnaby facility is a key production facility for a significant amount of Kodak's projects.
+                </p>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Job Description</h2>
+                    <p>
+                        As a Quality Tech Intern, I worked with the quality assurance team to ensure our production teams had high-quality materials to work with. 
+                        One of the big projects during my tenure was a new commercial handheld camera. This provided a wide variety of material types, shapes, finishes and fucntions. I learned a lot about supplier relationships, material regulations, designign fro manufacturing, shipping and logistics as well as the actual inspection techniques, kanban processes and NCR escalations for non-conformance.
+
+                    </p>
+                    <p>
+                        Many of the components of this product needed to be flawless in appearence as they would be observed by the user at every use. This meant I spent a lot of time using a Pantone Colour booth to inspect Plastic Injection Moulded parts to ensure colour accuracy, they were blemish free and other process inevitablilityies like flashing or gate marks were not beyond acceptabel tolerances.
+                        Alogn with this, physical measurements using calipers, micrometers and height gauges helped me ensure that parts met the required dimensions and tolerances from their engineering drawings.
+                        Some fo my favourite types of inspections used a microscope due to the small size and complexity of the parts being inspected.
+                    </p>
+
+            </div>
+            <div class="section">
+                <h2 class="section-title">Lasting Contributions</h2>
+                <h4>Inventory Inspections and Solutions</h4>
+                <p>As this project had bounced between facilities and design teams, along with the parts coming in daily for inspection a large inventory of components existed from before I commenced my co-op. Throughout my term I inspected thousands of parts to make sure they conformed. This investigation actually found that a large number of the parts actually did not conform to our standards, and if used would have led to an inferior product.
+                    Through sorting these parts I cleared a large part of inadequate inventory and escalated to purchasers who could get refunded due to the provided reports.
+                </p>
+                <h4>Drawing Redline and Inspection Process Creation</h4>
+                <p>
+                    Many of the plastic components we received were critical for aesthetic purposes so they were fully inspected to the same hgih standard. This led to a significant percentage of components being rejected, significantly reducing out manufacturing power. Through discussions with the design engineers, we determined that many of these components are actually only visible from certain angles, so we could create different failign ciretria based on the location of a aesthetic defect, like a slight scuff on the back of a permanent panel. 
+                    I took one of the prototype cameras and inspected it from the perspective of a consumer, and redlined the engineering drawings of 25 different parts to categorize surfaces of different inspections priorities. Through this initiaitve, standardized inspections for these parts are not part of thier inspection process, and a significant amoount of components that offer the same value to the end-user are usable in manufacturing.
+                </p>
+ 
+            </div>
         </div>
 
 
