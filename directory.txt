@@ -1,0 +1,12 @@
+portfolio-website/
+├── app.py                # Main Flask application
+├── requirements.txt      # Dependencies (Flask, markdown if needed, etc.)
+├── static/
+│   └── css/
+│       └── style.css     # Custom CSS (and images if needed)
+└── templates/
+    ├── base.html         # Base template with navigation and footer
+    ├── index.html        # Home page
+    ├── about.html        # About Me page
+    ├── projects.html     # Projects page
+    └── contact.html      # Contact page
