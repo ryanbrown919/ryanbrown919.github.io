@@ -11,7 +11,7 @@
         }
         body {
             font-family: Arial, sans-serif;
-            background-color: lightgray;
+            background-color: darkgrey;
 
         }
         .container {
@@ -152,8 +152,18 @@
         .resume-section {
             cursor: pointer;
             padding-left: 5px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
             
             
+        }
+        .work-logo img {
+            width: 80px; /* Adjust as needed */
+            /* Optional: border or padding */
+        }
+        .work-details {
+            flex: 1;
         }
         #transcript-details h5{
             padding:0px;
@@ -179,7 +189,7 @@
     
     <div id=headerSocials>
             
-        
+        <a href="mailto:ryanmacbrown@gmail.com"><img src="/images/emailLogo.jpg"width=50px height=50px></a>
         <a href="https://www.linkedin.com/in/ryanmacbrown/"><img src="/images/linkedinLogo.png" width=50px height=50px></a>
         <a href="https://github.com/ryanbrown919"><img src="/images/githubLogo.png" width=50px height=50px ></a>
     
@@ -244,6 +254,20 @@
         <div class="section">
             <h2 class="section-title">Work Experience</h2>
             <hr>
+            <div class="resume-section" id="microchip">
+                <div class="work-logo">
+                    <img src="/images/microchipLogo.png" alt="Microchip Logo">
+                </div>
+                <div class="work-details">
+                    <p><strong>Microchip Technologies - Vancouver, BC | May 2023 - Dec 2023</strong></p>
+                    <p><em>SERDES Product Engineering Co-op</em></p>
+                    <ul>
+                        <li>Evaluated advanced electrical test bench equipment for feasibility of use for next-generation flash memory controllers</li>
+                        <li>Scripted efficient and repeatable test suites for SERDES jitter analysis and flash memory read/write timing margins</li>
+                        <li>Automated equipment calibration with Python using SPCI and LAN interconnectivity protocols</li>
+                    </ul>
+                </div>
+            </div>
             <div class="resume-section" id="ledcor">
                 
                 <p><strong>Ledcor Technical Solutions - Vancouver, BC      |              May 2023 - Dec 2023</strong></p>
