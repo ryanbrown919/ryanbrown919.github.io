@@ -275,7 +275,7 @@
                     <img src="images/microchipLogo.svg" width=50px height=50px alt="Microchip Logo">
                 </div>
                 <div class="work-details">
-                    <p><strong>Microchip Technologies - Vancouver, BC | May 2023 - Dec 2023</strong></p>
+                    <p><strong>Microchip Technologies - Vancouver, BC | Jan 2024 - May 2024</strong></p>
                     <p><em>SERDES Product Engineering Co-op</em></p>
                     <ul>
                         <li>Evaluated advanced electrical test bench equipment for feasibility of use for next-generation flash memory controllers</li>
@@ -616,85 +616,147 @@
                 <img src="images\CheckMATE_poster.png">
                 <h2 class="section-title">Project Background</h2>
                 <p>
-                    As part of Integrated Engineering, every year we form groups around an idea and complete a term-long project. We have a lot of flexibility with what we attempt to do, as long as we can show a solid game plan and market value for our project. For IGEN 330, our budget was $400
+                    This project was my 4th year capstone project, where we are tasked with creating a  product incormporating multiple engineerign disciplines to create a product that is innovative, technologically advanced and ultimately marketable.
                     
                 </p>
                 <p>
-                    In my 3rd year, four of my peers and I decided to make a machine that can launch a volleyball in a similar fashion to a human setter. 
-                    This would allow users to practice offensive drills, arguably the most fun aspect of the sport, without requiring a setter to be present. The project was named Prospike, and with 6 months until presenting at Design and Innovation day 2023, we commenced.
+                    The project undertaken was called CheckMATE, which is a mechanically articulate chessboard. The intention of the device is to be able to brridge the gap between online and physcial chess, to give those who prefer a more tactile experience able to play agaisnt computers or other players online.
+                </p>
+                <p>
+                    Going into this project, it was understood that the intention for the end of the year was to have a very well executed project, with a focus on appearenece, usability and overall refinement rather than pure technological innovation. The budget for this porject was $1000 CAD, so careful design choices would be required to be able to meet the aesthetic criteria we set.
                 </p>
         
             </div>
             <div class="section">
+                <h2 class="section-title">Project Features</h2>
+                <ul>
+                    <li>Automatic Piece Articulation</li>
+                    <li>Move Detection</li>
+                    <li>Automatic Board Reset</li>
+                    <li>Illegal Move Handling</li>
+                    <li>Onboard Chess Engine with Variable ELO</li>
+                    <li>Interactive User Interface</li>
+                    <li>Self-articulating Chess Clock Rocker</li>
+                    <li>USB-C Powered</li>
+                </ul>
+
+            </div>
+            <div class="section">
+
                 <h2 class="section-title">Project Description</h2>
                 <p>
-                    There were many aspects of this project to consider, namely the aiming mechanism, launching mechanism, loading mechanism and the user interface.
+                    This project boils down into a few key categories: piece articulation, piece detection, gameplay, and user interface.             
                 </p>
-                <h4>Aiming</h4>
-                <p> We prioritized the front row positions, so our design had a full range of motion along one axis of tilt, or else it can hit anywhere along the net, around two feet off of the netting. This was accomplished by a rotating frame built using alumnium extrusions and a linear actuator attached to one end of the frame.
-                     The linear actuator was controlled by an arduino running a P-Control script, given input from an ultrasonic sensor mounted to the linear actuator.
-                </p>
-                <h4>Launching</h4>
-                <p>Launching was accomplished through two 3D printed wheels independantly connected to two 24V electric motors. These motors are contorlled by an off-the-shelf PWM controller.
-                    We modified this controller by replacing the rotaty potentiometer with an I2C digital potentiometer, allowing us to programmically control the speed of the motors based on the resistance specified.
-                </p>
-                <h4>Loading</h4>
-                <p>To launch the ball, it was raised and pushed between the rotating wheels by a halo mounted to a waterjet cut rack, moved by a stepper rotating a spur gear. 
-                    This enabled us to carefully lift the ball the exact right distance to force it between the wheels to launch. To reload a new ball, the halo was returned to the bottom and a servo blocking balls from a small ramp moves out of the way temporarily to allow a single ball to roll into the halo, ready to launch again.
-                </p>
-                <h4>User Interface</h4>
-                <p>The user interface was powered by a HP Spectre Laptop set up in tablet orientation on a shelf on the machine. The interface was coded using C# and XAML, utilizing Windows Presentation Format and Visual Studio Blend to create an intuitive user interface. On the right side, several of the most common sets are listed as well as options for three custom sets, configurable in the settings page.
-                    On the left side, the display features a custom made volleyball net graphic with a live visual of the ball and its trajectory, including for the custom sets. Custom sets allow the user to specify the apex height and final potiion of the ball, controlled by a vertical and horizontal slider.
+                <h4>Piece Articulation</h4>
+                <p> 
+                    Piece articulation is the main feature of this board compared to market alternatives. This is the key to making the experience legitimate, where the user does not need to execute the opponents move.
                 </p>
                 <p>
-                    The user can select up to 8 sets then activate the play button, after which the machine will run through the specified sequence of sets. As the sequence plays, the next set is displayed on screen.
+                    We achieved articulation throught he use of an electromagnet on the end effector of an H-Bot gantry underneath the playign surface. Activation and deactivation allowed for selective movement of the pieces, all of which feature an embedded magnet in the bottom.
+                </p>
+                <h4>Piece Detection</h4>
+                <p>
+                    Piece detection was key to allow the user to execute moved and have the gameplay recognize those inputs in a reliable and accurate way. Some nuance is required here for accurately determining the moves given special cases like captures and castling.
+                </p>
+                <p>
+                    This was achieved through the use of custom PCBs embedded below the playign sufrace with digital hall effect sensors. These could be polled to determine the occupancy of specific squares, and through changing board states moves could be determined.
+                </p>
+                <h4>Gameplay</h4>
+                <p> 
+                    Gameplay logic is the core of the project. Without this, the board is a simple gantry. Muhc of the gameplay logic was handled by the python-chess module, utilized without a custom state machine for robust process flow.
+                </p>
+                <h4>User Interface</h4>
+                <p>
+                    The user interface is what sperates this board from some of the market competitors, namely by providing a 7" touchscreen display with live game data and game selection screens.
+                </p>
+                <p>
+                    This was created using the Kivy framework for python and by leveraing threading to keep the UI and logical backend seperated. This allowed for a responsive UI which could display the custom widgets created for this project.
                 </p>
             </div>
             <div class="section">
                 <h2 class="section-title">Personal Contributions</h2>
                 <p>
-                    This project was more complex than anything I have done before and was a massive group effort. That being said, I personally contributed significantly to many important aspects of the project.
-    
+                    This project was extremely collaborative, educational and incredibly fun. 
+                    Maintaining the vision for our end product throughout the entire duration of the project allowed for interations to build into clever design decisions that aided integration at the end of the project
                 </p>
-                <h4>Aiming</h4>
                 <p>
-                    Setting up the linear actuator and establishing the control was my contribution to the aiming mechanism. Due to our limited budget, the linear actuator we acquired did not contain positional feedback. My solution to this was to use an ultrasonic sensor, plentifully avalible for free in our workshop, mounted on the actuator body and a reference target mounted on the actuator arm to calculate the extension.
-                    I also developed the arduino code which received a distance in centimeters from another arduino through I2C and continously utilized P-control to reach the correct distance and keep the frame at the correct angle, or else accelerate the frame in the required direction.
-                    PID-control was investigated, but the speed of the linear actuator limited the use of such a responsive system so it was not required.
+                    Throughout the 8 months of this project, I personally dedicated around 12 hours per week to various components. It is difficult to fully seperate contributions as there were so many made as a full group, but I will try to highlight personal acheivements below.
                 </p>
-                <h4>Launching</h4>
+                <h4>Piece Path Planning</h4>
                 <p>
-                    As I was heavily involved with system control, I implemented the replacement of manual speed control with a digital potentiomter. Also connected through I2C, 127 different resistance levels corresponded to different percentage powers and thus could be used to control the trajectory of the ball.
+                    Piece planning was a critical aspect of the project that I took a lead role in. This involved correlating chess moves into gantry coordinates and establishing control for precise movements.
+                    Though using the rank and file of the start and end suqares, a path could be made from the start square's absolute gantry coordinates, with the relative movements needed to get to the end square. This was simple for most chess moves which are linear, but for more complex moves like knights, castling and captures, more complexity was required.
                 </p>
-                <h4>Loading</h4>
                 <p>
-                    Made from an acrylic sheet, I waterjet cut the rack and gear used for the loading mechansim forcing the ball upwards between the launch wheels. I also developed the firmware for the timing of the reload servo synchronyzed with the halo being in the correct position.
+                    Knight movement was done through leveraging our custom piece design, where the diameter of the pieces was smal enough such that a piece could slide between two occupied squares. By makeing the knight do an 'S' movement, it could slip through the gap between pieces. 
                 </p>
-                <h4>User Interface</h4>
                 <p>
-                    The user interface was entirely developed by me. From creating the custom volleyball net graphic, to creating an encoded string to send to the microcontrollers with instructions for operation I developed full stack.
-                    A lot of effort was put into making the user interface as intuitive as possible. As it was used via touch screen, pressing one of the presets changed the display to show that set, with a trajectory, displayed and subsequent taps added that set to the sequence.
-                    All of this coding was self-taught throughout this project as I had never used either XAML or C# prior. Version control was also maintained via GitHub, which was essential as the computer used to run the program was not the same computer I developed the code on.
+                    Castling was done by identifying when a castle was attempted and using passed chess move to determine the nect steps required. For this process, the rook is first moved directly to its final position, then the king shuffles around the edges to get to its final position.
+                </p>
+                <p>
+                    Captures were another complicated scenario where design desicions were made to make the poricess more visuably appealing at the cost of a small amount of time. Instead of the least movements which would have been moving the captured piece to the deadzone then moving the captured piece to the final square, instead I opted for a 4-move sequence that involved moving the capturing piece close to the captured piece, moving the captured piece off the final square, mocing the capturing piece to its final square, then moving the captured piece to the deadzone. 
+                    This process is dynamic and the direction the pieces are offset change depending on the direction of the capturing piece.
+\                </p>
+                <h4>Piece Design</h4>
+                <p>
+                    Pice design was one of the more artisitc aspects of this project, where there was a lot of creative freedom with the design and overall aesthetic of the piece. We knew they would need to adhere to specific base geometry in terms of diamater, so likely they would need to be 3D printed intead of retrofitted from exisiting pieces, so high quality prints were used to fabricate these PETG parts.
+                    I took a lead role in the design of the pieces, where I created a custom design that was very similar to the Staunton style pieces, but with a more modern twist. The pieces were designed to be printed as a main body with a recess in the bottom for a properly sized magnet and internal cavities to increase the sthrength for thin cross sections.
+                </p>
+                <h4>USB-C Power Supply</h4>
+                <p>
+                    The entire board was powered via USB-C through leveraging the USB-C PD protocol. This was a great way to power the board as it allowed for a single cable to power the entire system, and also allowed for a very small form factor.
+                    A USB-C trigger was used to get 20V out of a 65W Lenovo laptop carger, whoch was fed directly into thesystem for the stepper motors and converted down to 5V for the Pi 5.
+                </p>
+
+                <h4>Gameplay and Control Software</h4>
+                <p>
+                    Gameplay and the backend logic of the system was the largest area of influence for me. Though much experimentation with the python-chess module and other open-source code, I was able to get a playable chess backend early into the project. This consisted of a custom UI with touch movement, very similar to a chess app on a phone. This was excellent validation for handling different types of moves and dealing with natural game scenarios like checkmate.
+                </p>
+                <p>
+                    I also created a custom state machine to handle the game flow, allowing for a robust, easy to maintain codebase. Thsi was citical to seperateing the user interface from the backend logic required, keeping everything responsive.
+                </p>
+                <h4>User Interface and Rocker Mechanism</h4>
+                <p>
+                    The user interface was designed in its entirety by me using the Kivy frameowkr for Python. This allowed heirarchial widgets to be created and reused as needed. This was especially helpful for widgets like a chessboard, where simplay passing the board state cold accurately represent the peice locations, and custom parameters let the perspective change between white on the bottom and black, and well as highlitihg legal moves and the most recent move executed.
+                </p>
+                <p>
+                    The user itnerface also allows users to select the type fo game they want to play, with variable settings for dificulty level and starting colour.
                 </p>
             </div>
             <div class="section">
                 <h2 class="section-title">Challenges and Solutions</h2>
-                <h4>Custom Sets & Live Trajectory Display</h4>
+                <h4>Responsive UI</h4>
                 <p>
-                    I really wanted to display the trajectory of the ball. This could be done easily for the standard sets by drawing out all the trajectories as seperate images and changing the display when they get selected, but this would not work for the custom sets.
-                    I investigated many ways of doing this, and settled on creating a bezier curve. If you are unfamiliar with bezier curves, they are curves with a start and end point, as well as two control points. These control points can be used to make a parabolic shape with variable slope, perfect for displaying the trajectory of a ball.
+                    Having all the control logic and the UI on the same device was a challenge. Traditional single-threaded coding would mean that any time spent loading or initalizing background tasks, or repeatedly polling sensors as is done for move detection, render the UI unresponsive and remove a lot of the refinement we wanted for the board. 
+                </p>
+                <p>    
+                    This was solved by using threading to run the UI and the logic in parallel, allowing for a responsive UI while still being able to poll the sensors and run the gantry. 
+                    A complication to this system is that UI elements could not be updated directly from different threads, so a oberver-notifier methodology was used to trigger callballbacks to UI elements when their state should be updated.
+                </p>
+                <h4>Piece Articulation Edge Cases</h4>
+                <p>
+                    Our gantry was sized such that it could access the center of all squares, but it could not reach the outside edge for all endges except the deadzone, so cases where captures would normally push pices off the opposite corner would trigger end stops and need to be resolved.
+                    Through checkign the rank and file of the end square for a given move, as well as other parameters like if it was a capture, specific paths could be taken to ensure the peice did not end up in an inaccessible position.
+                    This was done independantly for each possible edge, but logic was done algorithmically to favour transitions to the middle of the board where ambiguity exisited.
+                </p>
+                <h4>Piece Detection</h4>
+                <p>
+                    Piece Detection was another system where design decisions could directly impact certain situations. When initially considering the possability of determining chess moves based on square occupancy, comparing only previous board state to current board state works for cases where there are no captures or only a single capture possible.
+                    In cases where multiple captures were possible, the board would only register the loss of the capturing piece and would not be able to distinguish between the two possible moves. 
+                </p>
+                <p>
+                    One possible workaround would be to leverage the NFC tags to scan both of the possible captured squares and determine where the capturing pice when, but this would be quite slow and require physical gantry movement to detemrine a move.
+                    Instead, I implemented a system that continuously polled the current state of the board to a snapshot at the beginning of a turn, identofying the first change in occupancy as the desired piece to move. This was then split into a second polling sequence to determine the second square to even instantaneously change occupancy, so things like capturing a piece where an opponents piece would be lifted would register as the proper move.
+                    Many edge cases like replacing the first piece lifted and illegal move handling needed to be implemented, but this method ensure that moves are accurately captured very quickly and without any issues of ambiguity.
+                </p>
     
-                </p>
-                <p>
-                    By changing the control point's x and y positions according to the sliders, the drawing could be updated instantly. Additionally, by calculating the difference in coordinates between the start point and the first contol point, the slope of tangent line to launch could be calculated from the display itself. This allows the custom sets on the interface to actually 
-                    translate to a calculated launch angle, and similarly the distance between control point and start point were used to calculate the required motor speed, found from baseline testing at set power levels.
-                </p>
             </div>
             <div class="section">
                 <h2 class="section-title">Conclusion</h2>
-                <p>
-                    As a final result, this project was a great success. We had a functioning machine that could store up to 8 balls, a interface that could have custom programmed sets, and launch the ball at significant velocity, consistently. At design and Innovation Day 2023, we did around 40 test launches to demonstrate this project, and out of those every single one landed in the 2x3 foot box we marked out on the ground for that demo set.
-                    It so happens that a nother group undertook the same project a year above us during the same term, and it was unanimous among those we talked to that our solution was more intuitive, more consistent, more reliable and overall a better product for the user.
+                <p> 
+                    <p>
+                        The mechanically articulating chessboard was an incredible success, exceeding expectations in both functionality and design. It seamlessly combined mechanical engineering, software development, and user interface design to create a product that was not only innovative but also highly polished and user-friendly. The board's ability to autonomously execute chess moves, detect player inputs, and provide a responsive user interface made it a standout project. The attention to detail in the design, from the custom chess pieces to the USB-C power integration, showcased the team's dedication to creating a refined and marketable product. This project was a testament to the power of interdisciplinary collaboration and the team's ability to overcome challenges to deliver a truly remarkable final product.
+                    </p>
                 </p>
             </div>
 
@@ -873,6 +935,48 @@
                 </p>
             </div>
         </div>
+
+        <div id="microchip-details" class="hidden">
+            <h1>Microchip | Work Experience</h1>
+            <div class="section">
+                <h2 class="section-title">Company Background</h2>
+                <p>Ledcor Group of Companies spans many industries and countries, but I fall under the distinction of LTS, or Ledcor Technical Services. This is a utiltiy company working throughout Canada and the United States with expertise in fibre optic distribution networks for both design and contruction.</p>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Job Description</h2>
+                    <p>As a Pole Line Design Engineer, my team is responsable for structural analysis on aerial telecomm lines to ensure they currently adhere to standards and can tolerate new additions.
+                        More specifically, as a Co-op student it is my responsabilty to do the foundational work of modeling the communities we are inspecting, which includes pre-populating maps with pole locations, connecting spans, occasionaly going into the field and collecting data about the poles using laser measuring technology, and modeling the community in an industry-utilized engineering software.
+                        Frequently my workload consists of multiple communities concurrently, doing tasks like quality control on fielded data, communicating with fielders about key areas to stay on schedule, all while modeling detailed designs for different communities.
+                    </p>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Lasting Contributions</h2>
+                <p>While this position typically attracts more civil and mechanically inclined people, I have an itch for software development and an insatiable curosity about why things are the way they are. 
+                    About half way into my 8-month term, after I was very familair with the existing process, I investigated the modeling software we used and determined there was a way we could save up to 70% of the modeling effort if we used a different type of data import.
+                    To keep it simple, the existing process when I joined involved importing a CSV file with basic pole information like latitude and longitude, pole height, type, etc. With the new method I developed, import includes spans between poles, anchors modeled exactly as fielded or even more accruately, hardware like transformers imported directly, and more. After this new import, the only thing the designer needs to do is quality control the community and add in a few unsupported attributes, which takes a fraction of the previous time.
+                </p>
+                <h4>Code</h4>
+                <p>The basis for this program uses python to manipulate data from an excel sheet and transfer this data to an SQLite database, which is a supported import filetype along with JSON. 
+                    While this process is quite simple, the program quickly become 2000+ lines of code as different scenarios, incomplete data and other issues arose and were addressed. The code is now very robust against incomplete or incorrect data, features calculations which previously had to be done manually, and completes standard assumptions if data is incomplete.
+                </p>
+                <h4>Communication</h4>
+                <p>One of the biggest acheivements of this process was the communication needed to make it a reality. Within my own team I was able to hear feedback and iterate accordingly to create a more robust and accurate import and user friendly experience. Outside of my team,
+                    I was in direct contact with the principal engineer at the company developing the modeligng software. While the SQlite functionality existed, it was quite incomplete and promised many features that it could not deliver. 
+                    I was able to go back and forth with this engineer and provide test files and examples, and through this collaboration an update for the software was released specifically to deal with my feedback. This added functionality opened the door for further automation and fulfilled the original key promises of the import type.
+                </p>
+                <h4>Documentation</h4>
+                <p>
+                    Beyond the code itself, which is also extensively commented and explained, a lot of documentation was required to bring this tool to my fellow team members. A lot of the exsiting procedures had to be modified, specific data needs to be in place and generally a lot more attention to the data is required since it is getting imported directly.
+                    I created lengthy and detailed documentation outlining step-by-step guides, as well as giving logic explanation as to why soemthing might have not worked or why it needs to be the way it was. All of this documentation means the tool goes beyond a script and became an official alteration to the team's workflow.
+                </p>
+                <h4>Innovation Submission</h4>
+                <p>Every year employees are encouraged to submit submissions about their innovations to be voted upon by peers. This tool that I developed was submitted as an innovation, and has received division-wide attention.
+
+                </p>
+            </div>
+        </div>
+
+
         <div id="ledcor-details" class="hidden">
             <h1>Ledcor | Work Experience</h1>
             <div class="section">
