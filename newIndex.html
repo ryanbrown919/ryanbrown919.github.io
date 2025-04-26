@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryan Brown | Integrated Engineering</title>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --accent-color: #0272bd;
+      --link-hover: #fff;
+      --section-padding: 60px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+    header h1 { font-size: 1.8rem; }
+    nav a {
+      color: var(--text-color);
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover { color: var(--accent-color); }
+    section { padding: var(--section-padding) 20px; }
+    .container { max-width: 1000px; margin: auto; }
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: var(--accent-color);
+    }
+    .card {
+      background: #1e1e1e;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    .flex {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .flex .card { flex: 1 1 300px; }
+    .skills-list, .affiliations-list, .interests-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skills-list li, .affiliations-list li, .interests-list li {
+      background: #272727;
+      padding: 8px 12px;
+      border-radius: 20px;
+    }
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      border-top: 1px solid #333;
+    }
+    footer a {
+      color: var(--accent-color);
+      margin: 0 10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="container" style="position: fixed; top: 0; width: 100%; background-color: var(--bg-color); z-index: 1000; border-bottom: 1px solid #333;">
+    <h1 id="header-title" style="margin-right: auto;">Ryan Brown</h1>
+    <nav style="display: flex; align-items: center; gap: 20px;">
+      <div id="menu" style="display: flex; gap: 20px;">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+      </div>
+      <div id="icons" style="display: flex; gap: 10px; align-items: center;">
+        <div style="border-left: 1px solid var(--text-color); height: 50px; margin: 0 10px;"></div>
+        <a href="mailto:ryanmacbrown@gmail.com" aria-label="Email">
+          <img src="images/emailLogo.png" alt="Email Icon" style="width: 50px; height: 50px;">
+        </a>
+        <a href="https://www.linkedin.com/in/ryanmacbrown" target="_blank" aria-label="LinkedIn">
+          <img src="images/linkedinLogo.png" alt="LinkedIn Icon" style="width: 50px; height: 50px;">
+        </a>
+        <a href="https://ryanbrown919.github.io" target="_blank" aria-label="GitHub">
+          <img src="images/githubLogo.png" alt="GitHub Icon" style="width: 50px; height: 50px;">
+        </a>
+      </div>
+      <button id="hamburger" style="display: none; background: none; border: none; color: var(--text-color); font-size: 2.5rem; cursor: pointer;">☰</button>
+    </nav>
+  </header>
+
+  <div id="hamburger-menu" style="display: none; position: fixed; top: 60px; right: 0; background-color: var(--bg-color); width: 100%; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <br>
+    <a href="#about" style="display: block; margin-bottom: 10px; color: var(--text-color); text-decoration: none;">About</a>
+    <a href="#experience" style="display: block; margin-bottom: 10px; color: var(--text-color); text-decoration: none;">Experience</a>
+    <a href="#projects" style="display: block; margin-bottom: 10px; color: var(--text-color); text-decoration: none;">Projects</a>
+    <a href="#skills" style="display: block; margin-bottom: 10px; color: var(--text-color); text-decoration: none;">Skills</a>
+    <div style="border-top: 1px solid var(--text-color); margin-top: 10px; padding-top: 10px;">
+      <a href="mailto:ryanmacbrown@gmail.com" aria-label="Email" style="display: inline-block; margin-right: 10px;">
+        <img src="images/emailLogo.png" alt="Email Icon" style="width: 50px; height: 50px;">
+      </a>
+      <a href="https://www.linkedin.com/in/ryanmacbrown" target="_blank" aria-label="LinkedIn" style="display: inline-block; margin-right: 10px;">
+        <img src="images/linkedinLogo.png" alt="LinkedIn Icon" style="width: 50px; height: 50px;">
+      </a>
+      <a href="https://ryanbrown919.github.io" target="_blank" aria-label="GitHub" style="display: inline-block;">
+        <img src="images/githubLogo.png" alt="GitHub Icon" style="width: 50px; height: 50px;">
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const icons = document.getElementById('icons');
+    const hamburger = document.getElementById('hamburger');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const headerTitle = document.getElementById('header-title');
+
+    function handleResize() {
+      const isMobile = window.innerWidth <= 768;
+      const menuWidth = menu.offsetWidth + icons.offsetWidth + 50; // 50px buffer for spacing
+
+      if (isMobile || menuWidth > window.innerWidth) {
+        menu.style.display = 'none';
+        icons.style.display = 'none';
+        hamburger.style.display = 'block';
+        headerTitle.style.display = 'block';
+        hamburgerMenu.style.display = 'none';
+      } else {
+        menu.style.display = 'flex';
+        icons.style.display = 'flex';
+        hamburger.style.display = 'none';
+        headerTitle.style.display = 'block';
+      }
+    }
+
+    hamburger.addEventListener('click', () => {
+      hamburgerMenu.style.display = hamburgerMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    window.addEventListener('resize', handleResize);
+    document.addEventListener('DOMContentLoaded', handleResize);
+  </script>
+
+  <section id="about" class="container">
+    
+    <div style="display: flex; align-items: center; gap: 20px;">
+      <div style="flex: 2;">
+        <h2>About Me</h2>
+        <p>Integrated Engineering graduate specializing in Electrical &amp; Computer Engineering from UBC Vancouver. </p>
+        <br>
+        <p>Striving for life-long learning, constant growth, and a positive experience with every interaction. </p>
+        <br>
+        <p>Passionate about automation, embedded systems, and system-level integration, and constantly being challenged to innovate.</p>
+      </div>
+      <div class="image-container">
+        <img src="images/CouncilHeadshot.png" alt="Headshot of Ryan Brown" style="width:100%; max-width:300px; border-radius:5%;">
+        <!-- <p class="image-caption">Replace with a professional headshot</p> -->
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="container">
+    <h2>Work Experience</h2>
+    <div class="card" style="display: flex; align-items: center; gap: 15px;">
+      <img src="images/microchipLogo.svg" alt="Microchip Icon" style="width: 100px; height: 100px; padding: 10px;">
+      <div>
+      <h3>Product Engineer Co-op, SERDES Characterization</h3>
+      <p><strong>Microchip</strong> &ndash; Burnaby, BC (Jan 2024 &ndash; Apr 2024)</p>
+      <ul>
+      <li>Evaluated advanced test bench equipment for next-generation flash memory controllers.</li>
+      <li>Scripted repeatable Python test suites for SERDES jitter analysis and timing margins.</li>
+      <li>Automated calibration with SPCI &amp; LAN protocols.</li>
+      </ul>
+      </div>
+    </div>
+    <div class="card" style="display: flex; align-items: center; gap: 15px;">
+      <img src="images/ledcorLogo.png" alt="Ledcor Logo" style="width: 100px; height: 80px; padding: 10px;">
+      <div>
+      <h3>Pole Line Design Engineer Co-op</h3>
+      <p><strong>Ledcor Group (Technical Services)</strong> &ndash; Vancouver, BC (May 2023 &ndash; Dec 2023)</p>
+      <ul>
+        <li>Reduced modeling effort by 70% via Python &amp; SQL automation.</li>
+        <li>Developed GUI for interactive cable type modeling.</li>
+        <li>Performed structural analysis for province-wide FTTH rollout.</li>
+        <li>Field surveys; awarded “Out of the Blue” for efficiency.</li>
+      </ul>
+      </div>
+    </div>
+    <div class="card" style="display: flex; align-items: center; gap: 15px;">
+      <img src="images/kodakLogo.png" alt="Kodak Logo" style="width: 100px; height: 80px; padding: 10px;">
+      <div>
+      <h3>Quality Tech Co-op</h3>
+      <p><strong>Eastman Kodak Company</strong> &ndash; Burnaby, BC (May 2022 &ndash; Aug 2022)</p>
+      <ul>
+        <li>Established QC standards and technical drawings for incoming parts.</li>
+        <li>Utilized industry-standard equipment for tolerance inspection.</li>
+      </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="container">
+    <h2>Technical Projects</h2>
+    <div class="card">
+      <h3>Self-Articulated Chess Board</h3>
+      <p><em>IGEN 430, UBC (Sep 2024 &ndash; Apr 2025)</em></p>
+      <ul>
+        <li>Modular control software for gantry movement and online gameplay API.</li>
+        <li>Optimized trajectory algorithms with object-avoidance.</li>
+        <li>CAD modeling &amp; 3D printing rapid prototypes.</li>
+      </ul>
+      <div>
+        <br>
+        <img src="images/CheckMATE_poster.png" alt="Self-Articulated Chess Board prototype" style="width:100%; max-width:400px;">
+      </div>
+    </div>
+    <div class="card">
+      <h3>Volleyball Setting Machine</h3>
+      <p><em>IGEN 330, UBC (Oct 2022 &ndash; Apr 2023)</em></p>
+      <ul>
+        <li>C# / XAML UI with live trajectory visualization.</li>
+        <li>Git workflow &amp; version control for collaboration.</li>
+        <li>Designed electrical system &amp; implemented Arduinos firmware.</li>
+      </ul>
+      <div>
+        <img src="placeholder_volleyball.jpg" alt="Volleyball Setting Machine" style="width:100%; max-width:400px;">
+      </div>
+    </div>
+    <!-- Add more projects here -->
+  </section>
+
+  <section id="skills" class="container">
+    <h2>Skills &amp; Tools</h2>
+    <ul class="skills-list">
+      <li>Python</li><li>Machine Learning</li><li>C++</li><li>C#</li>
+      <li>System Verilog</li><li>Assembly</li><li>SQL</li><li>JavaScript</li>
+      <li>SolidWorks</li><li>AutoCAD</li><li>ESP32 / Pico / Arduino</li>
+      <li>FPGA</li><li>3D Printing</li><li>CNC &amp; Waterjet</li>
+      <li>Soldering &amp; Circuit Analysis</li>
+      <li>UI Design (Kivy, XAML)</li>
+    </ul>
+  </section>
+
+  <section id="education" class="container">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>BASc Integrated Engineering</h3>
+      <p><strong>University of British Columbia</strong> &ndash; Vancouver, BC (Graduation: May 2025)</p>
+      <p>Electrical &amp; Computer Specialization &mdash; Cumulative Average: 87%</p>
+    </div>
+  </section>
+
+  <section id="affiliations" class="container">
+    <h2>Professional Affiliations</h2>
+    <ul class="affiliations-list">
+      <li>UBC MINT Design Team</li>
+      <li>Engineers &amp; Geoscientists BC</li>
+      <li>UBC IE Student Council VP External</li>
+    </ul>
+  </section>
+
+  <section id="interests" class="container">
+    <h2>Interests &amp; Activities</h2>
+    <ul class="interests-list">
+      <li>Soccer &amp; Volleyball (Provincial Champion)</li>
+      <li>Travel &amp; Backpacking</li>
+      <li>Hiking</li>
+      <!-- Add more here -->
+    </ul>
+  </section>
+
+  <footer id="contact">
+    <p>Contact me:</p>
+    <p>
+      <a href="mailto:ryanmacbrown@gmail.com" aria-label="Email"></a>
+        <img src="images/emailLogo.png" alt="Email Icon" style="width: 24px; height: 24px;">
+      </a>
+      <a href="https://www.linkedin.com/in/ryanmacbrown" target="_blank" aria-label="LinkedIn">
+        <img src="images/linkedinLogo.png" alt="LinkedIn Icon" style="width: 24px; height: 24px;">
+      </a>
+      <a href="https://ryanbrown919.github.io" target="_blank" aria-label="GitHub">
+        <img src="images/githubLogo.png" alt="GitHub Icon" style="width: 24px; height: 24px;">
+      </a>
+    </p>
+  </footer>
+</body>
+</html>
